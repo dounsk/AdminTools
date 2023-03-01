@@ -19,14 +19,14 @@ file_type = ".csv"
 export_directory = 'C:\\Users\\douns\\Downloads'
 # ^ ------------------------------------------------------------------------
 
-suffix = datetime.now().strftime('%Y%m%d%H%M%S')
+suffix      = datetime.now().strftime('%Y%m%d%H%M%S')
 export_file = export_directory + '\\merged_file_' + suffix +'.csv'
 # create an empty dataframe 
 df_merged = pd.DataFrame()
-files = os.listdir(scan_directory)
+files     = os.listdir(scan_directory)
 # ? loop through the filenames list and read each csv file 
 for file in files:
-    if file.endswith(file_type):
+    if file.endswith(file_type): 
         df = pd.read_csv(scan_directory + '/' + file)
         # append the data from each file into the empty dataframe 
         df_merged = pd.concat([df_merged, df])
