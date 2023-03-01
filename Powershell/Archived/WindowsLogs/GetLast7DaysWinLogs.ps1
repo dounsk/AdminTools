@@ -1,0 +1,1 @@
+﻿wevtutil epl Application C:\Users\admin\Downloads\WinLogs_$(hostname)_$(Get-Date -Format 'yyyyMMdd').evtx /q:"*[System[(Level=1  or Level=2 or Level=3 or Level=4 or Level=0 or Level=5) and TimeCreated[timediff(@SystemTime) <= 604800000]]]"
