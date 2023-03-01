@@ -1,6 +1,12 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# @Date    : 2022-10-19 09:45:14
+'''
+Author       : Kui.Chen
+Date         : 2022-10-19 16:56:14
+LastEditors  : Kui.Chen
+LastEditTime : 2023-03-01 11:07:06
+FilePath     : \Scripts\Python\temp\test.py
+Description  : 
+Copyright    : Copyright (c) 2023 by Kui.Chen, All Rights Reserved.
+'''
 
 import os
 import time
@@ -15,14 +21,14 @@ with open(filename, 'r', encoding='utf-16') as file_object:
 	tmpinfo = file_object.read()
 
 mail_set = {
-    "host": "smtp.office365.com",
-    "pwd": 'KFCrazy4V50ToMe',
-    "sender": "noreply@8088.onmicrosoft.com",
+    "host"     : "smtp.office365.com",
+    "pwd"      : 'KFCrazy4V50ToMe',
+    "sender"   : "noreply@8088.onmicrosoft.com",
     "receivers": [
                   'dounsk@outlook.com',
                  ],
-    "Subject":"The administrator is inactive",
-	"Content":('Dear,' + '<br>' +
+	"Subject": "The administrator is inactive",
+	"Content": ('Dear,' + '<br>' +
 		'We have no monitored of administrator activity...' + '<br>' +
 		tmpinfo ),
 }
@@ -30,22 +36,22 @@ mail_set = {
 class SendMail(object):
 
     @staticmethod
-    def get_message():
-        message = MIMEMultipart()
-        message['From'] = mail_set['sender']
-        message['To'] = ';'.join(mail_set['receivers'])
+    def get_message(): 
+        message            = MIMEMultipart()
+        message['From']    = mail_set['sender']
+        message['To']      = ';'.join(mail_set['receivers'])
         message['Subject'] = mail_set['Subject']
         return message
 
-    def get_content(self):
+    def get_content(self): 
         message = self.get_message()
         content = MIMEText(mail_set['Content'], 'html', 'utf-8')
         message.attach(content)
         return message
 
     @staticmethod
-    def send(message, receivers):
-        try:
+    def send(message, receivers): 
+        try                     : 
             smtp_obj = smtplib.SMTP(mail_set['host'])
             smtp_obj.connect(mail_set['host'], 587)
             smtp_obj.ehlo()
@@ -56,11 +62,11 @@ class SendMail(object):
                               receivers,
                               message.as_string())
             print('The notification email was sent successfully!')
-        except smtplib.SMTPException as e:
+        except smtplib.SMTPException as e: 
             print('Notification email failed to be sent，Error：{}'.format(e))
 
-    def run(self):
-        user_message = self.get_content()
+    def run(self): 
+        user_message   = self.get_content()
         user_receivers = mail_set['receivers']
         self.send(user_message, user_receivers)
 
