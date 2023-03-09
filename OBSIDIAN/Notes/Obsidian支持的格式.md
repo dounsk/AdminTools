@@ -260,7 +260,7 @@ function fancyAlert(arg) {
 - [ ] 在预览模式下单击选框可以切换项目完成状态
 ```
 
--   支持 [#标签](https://publish.obsidian.md/#%E6%A0%87%E7%AD%BE) ，[链接](https://publish.obsidian.md/)，**样式**
+-   支持[标签](https://publish.obsidian.md/#%E6%A0%87%E7%AD%BE) ，[链接](https://publish.obsidian.md/)，**样式**
 -   要求包含列表标志（有序表无序表均可，比如 `1.[x]` 同样可以）
 -   这是一个已经完成的项目
 -   这也是一个已完成的项目（实际上你可以在其中使用任何字符）
@@ -338,7 +338,7 @@ function fancyAlert(arg) {
 使用两个等号来对文本进行高亮==文本==。
 ```
 
-使用两个等号来对文本进行高亮文本。
+使用两个等号来对文本进行高亮==文本==。
 
 ---
 
@@ -391,10 +391,10 @@ c & d
 
 以下为示例：
 
-这里是行内注释：
-
+%%这里是行内注释：%%
+%%
 这里是跨行注释：
-
+%%
 ### 图表
 
 Obsidian 通过 [Mermaid](https://mermaid-js.github.io/) 及其所提供的[编译器](https://mermaid-js.github.io/mermaid-live-editor)来为用户提供图表的绘制功能。
