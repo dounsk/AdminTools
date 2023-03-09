@@ -1,3 +1,12 @@
+'''
+Author       : Kui.Chen
+Date         : 2023-01-10 16:09:39
+LastEditors  : Kui.Chen
+LastEditTime : 2023-03-06 14:23:30
+FilePath     : \Scripts\Python\ScheduledTasks\daily_zhihu.pyw
+Description  : 
+Copyright    : Copyright (c) 2023 by Kui.Chen, All Rights Reserved.
+'''
 import bs4
 import json
 import smtplib
@@ -46,7 +55,7 @@ class SendMail(object):
                               message.as_string())
             print('The mail was sent successfully!')
         except smtplib.SMTPException as e:
-            print('Failed，Error：{}'.format(e))
+            print('Failed, Error:{}'.format(e))
 
     def run(self):
         user_message = self.get_content()

@@ -1,0 +1,183 @@
+{
+  "main": {
+    "id": "00abd7aad8d6996e",
+    "type": "split",
+    "children": [
+      {
+        "id": "2f69b308daa00bc6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9020bd7fbf7adb5e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Project/Qlik_Sense/DataBase Password.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "aecfb3c1c3056043",
+    "type": "split",
+    "children": [
+      {
+        "id": "f9a3a3f1466e8d7c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "87ba0b5448e6defd",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "de90265ba5676cff",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "790b595e315154bb",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "f324f802825d310f",
+    "type": "split",
+    "children": [
+      {
+        "id": "7a106eba3a925c9e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "10c1c2069f29a488",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Project/Qlik_Sense/DataBase Password.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "4f07a595ec565795",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "2503c09dcc747da7",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Project/Qlik_Sense/DataBase Password.md"
+              }
+            }
+          },
+          {
+            "id": "ccbd02638514ab29",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "9ea7d5ede66cc751",
+            "type": "leaf",
+            "state": {
+              "type": "todo",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 319.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "random-note:开始漫游笔记": false,
+      "zk-prefixer:创建时间戳笔记": false
+    }
+  },
+  "active": "9020bd7fbf7adb5e",
+  "lastOpenFiles": [
+    "Project/Qlik_Sense/Firewall Requests.md",
+    "Project/Qlik_Sense/Qliksense Cluster Info.md",
+    "Project/Qlik_Sense/Qlik Sense Global - Servers List.md",
+    "Project/Qlik_Sense/QlikSense App Clean-up.md",
+    "Project/Qlik_Sense/How to Connect NPrinting to Single or Multiple Qlik Sense servers.md",
+    "Project/Qlik_Sense/DataBase Password.md",
+    "Daily/周报 2023-03-09 周四.md",
+    "Daily/2023-03-06 周一.md",
+    "Daily/2023-02-09 周四.md",
+    "CANVAS/白板.canvas",
+    "Attached/template/模板：笔记.md",
+    "Notes/Obsidian支持的格式.md",
+    "Project/Qlik_Sense/Section Access.md",
+    "Documentation Notes/2023 AI 工具合集文档.md",
+    "未命名.canvas",
+    "Daily/2023-03-09.md",
+    "Notes/常用的Windows命令.md",
+    "Notes/2023-03-09.md",
+    "Notes/202303091609.md",
+    "Notes/202303091608.md",
+    "Notes/202303091607.md",
+    "Notes/202303091606.md",
+    "Attached/Pasted image 20230210114444.png",
+    "123.md"
+  ]
+}

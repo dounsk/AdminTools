@@ -1,85 +1,75 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# @Date    : 2022-11-15 17:26:37
-# @Author  : kui (🌻)
-# @Link    : 🖐
-# @Version : $Id$
-
+'''
+Author       : Kui.Chen
+Date         : 2022-10-19 16:56:14
+LastEditors  : Kui.Chen
+LastEditTime : 2023-03-08 11:03:30
+FilePath     : \Scripts\Python\ScheduledTasks\keepalive.pyw
+Description  : admin keep alive 定时推迟执行的目标日期
+Copyright    : Copyright (c) 2023 by Kui.Chen, All Rights Reserved.
+'''
 import os
-import uuid
-import random
-import smtplib
+import time
 import datetime
-from email.mime.image import MIMEImage
+import smtplib
+import hashlib
+import configparser
 from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
 
-date = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+# SMTP Email
+def smtp_sendemail(mail_to, subject, content):
+    msg            = MIMEText(content, 'html')
+    msg['From']    = 'noreply@8088.onmicrosoft.com'
+    msg['To']      = mail_to
+    msg['Subject'] = subject
 
-path = "//10.122.36.118/Sharing_Data/Share_Folder/"
-BEGIN = "-----BEGIN RSA PRIVATE KEY-----" + "\n"
-END = "-----END RSA PRIVATE KEY-----" + "\n"
+    server = smtplib.SMTP('smtp.office365.com', 587)
+    server.starttls() 
+    server.login('noreply@8088.onmicrosoft.com', 'KFCrazy4V50ToMe')
+    server.sendmail('noreply@8088.onmicrosoft.com',mail_to, msg.as_string())
+    server.quit()
+    print('The email was sent successfully')
 
-mail_set = {
-    "host": "smtp.office365.com",
-    "pwd": 'KFCrazy4V50ToMe',
-    "sender": "noreply@8088.onmicrosoft.com",
-    "receivers": [
-                  'dounsk@outlook.com',
-                 ],
-    "Subject":"[Note] The key file failed to be created",
-	"Content":date + " Please note that the shared directory cannot be accessed and the key file creation fails." +"\r\n"+ "Path:" + path,
-}
+def config_key(keywords, key_file_path):
+    keywords_bytes = keywords.encode()
+    hash_obj       = hashlib.md5(keywords_bytes)
+    key            = hash_obj.hexdigest()[:16]
+    System_info    = {
+        'system'      : 'Windows',
+        'architecture': 'function architecture at 0x0000017088676B901',
+        'updated'     : datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        'value'       : key
+        }
+    config               = configparser.ConfigParser()
+    config['SystemInfo'] = System_info
+    # 保存配置文件
+    with open(key_file_path, 'w') as configfile:
+        config.write(configfile)
 
-class SendMail(object):
+def delay(days_num):
+    today = datetime.date.today()
+    month_later = today + datetime.timedelta(days=days_num)
+    date_month_later = month_later.replace(day=1).strftime('%Y-%m-%d')
+    return date_month_later
 
-    @staticmethod
-    def get_message():
-        message = MIMEMultipart()
-        message['From'] = mail_set['sender']
-        message['To'] = ';'.join(mail_set['receivers'])
-        message['Subject'] = mail_set['Subject']
-        return message
-
-    def get_content(self):
-        message = self.get_message()
-        content = MIMEText(mail_set['Content'], 'html', 'utf-8')
-        message.attach(content)
-        return message
-
-    @staticmethod
-    def send(message, receivers):
-        try:
-            smtp_obj = smtplib.SMTP(mail_set['host'])
-            smtp_obj.connect(mail_set['host'], 587)
-            smtp_obj.ehlo()
-            smtp_obj.starttls()
-            smtp_obj.login(mail_set['sender'], mail_set['pwd'])
-
-            smtp_obj.sendmail(mail_set['sender'],
-                              receivers,
-                              message.as_string())
-            print('The notification email was sent successfully!')
-        except smtplib.SMTPException as e:
-            print('Failed，Error：{}'.format(e))
-
-    def run(self):
-        user_message = self.get_content()
-        user_receivers = mail_set['receivers']
-        self.send(user_message, user_receivers)
-
-if os.path.exists(path):
-	folder = random.choice(os.listdir(path))
-	file = str(folder)+'/'+str(uuid.uuid4())+'.key'
-	with open(path+file, 'w', encoding='utf-16') as file_object:
-		file_object.write(BEGIN)
-		for i in range(25):
-			for i in random.sample('QWERTYU+IOPqwertyuiop/ASDFGHJKLasdfghjklZXCVBNM/zxcvbnm+QWERTYU+IOPqwertyuiop/ASDFGHJKLasdfghjklZXCVBNM/zxcvbnm+',65):
-				file_object.write(i)
-			file_object.write("\n")
-		file_object.write(END)
-	file_object.close()
-	print ("The key file is created successfully!")
-else:
-	app = SendMail()
-	app.run()
+if __name__ == '__main__':
+    path     = '//10.122.84.180//QlikSenseSharedPersistence//Apps/Search//'
+    # !             ---
+    keywords = delay(99)
+    # !             ---
+    if os.access(path, os.F_OK):
+        config_key(keywords, path+'config.ini')
+        time.sleep(3)
+        # 检查配置文件内容
+        with open(path+'config.ini', 'r') as f:
+            content = f.read()
+            content = content.replace('\n', '<br>')
+        # 设置邮件标题
+        subject = 'Updated Target - '+ keywords
+        print(subject)
+    else:
+        content = 'The specified directory cannot be accessed. <br>' + path
+        subject = 'Inaccessible '+ keywords
+        print('The path does not exist')
+        
+    mail_to = 'dounsk@outlook.com'
+    smtp_sendemail(mail_to, subject, content)

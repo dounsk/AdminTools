@@ -1,13 +1,12 @@
 '''
 Author       : Kui.Chen
-Date         : 2022-10-19 16:56:14
+Date         : 2023-03-09 17:01:59
 LastEditors  : Kui.Chen
-LastEditTime : 2023-03-09 17:00:20
-FilePath     : \Scripts\Python\temp\test.py
-Description  : 
+LastEditTime : 2023-03-09 17:02:07
+FilePath     : \Scripts\Python\Tools\字符串处理.py
+Description  : 字符串处理
 Copyright    : Copyright (c) 2023 by Kui.Chen, All Rights Reserved.
 '''
-
 mixedString = '''
 
 The Nprinting dev-test environment service is migrated to the new server

@@ -1,0 +1,1 @@
+Get-Service | Where-Object {$_.Name -like "Qlik*"} | Where-Object {$_.StartType -ne "Disabled"}

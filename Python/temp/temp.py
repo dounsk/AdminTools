@@ -1,86 +1,125 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# @Date    : 2022-10-19 15:09:09
-# @Author  : kui (👍)
-# @Link    : 🖐
-# @Version : $Id$
-# -*- coding: utf-8 -*-
-
-import os
-import uuid
-import random
 import smtplib
-import datetime
-from email.mime.image import MIMEImage
 from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
 
-date = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
-path = "//10.122.36.118/Sharing_Data/Share_Folder/"
-BEGIN = "-----BEGIN RSA PRIVATE KEY-----" + "\n"
-END = "-----END RSA PRIVATE KEY-----" + "\n"
+def __init__(self, logo_url, date, ip, cpu, ram, service_names, service_status, logs, disclaimer):
+    self.logo_url = logo_url
+    self.date = date
+    self.ip = ip
+    self.cpu = cpu
+    self.ram = ram
+    self.service_names = service_names
+    self.service_status = service_status
+    self.logs = logs
+    self.disclaimer = disclaimer
 
-mail_set = {
-    "host": "smtp.office365.com",
-    "pwd": 'KFCrazy4V50ToMe',
-    "sender": "noreply@8088.onmicrosoft.com",
-    "receivers": [
-                  'dounsk@outlook.com',
-                 ],
-    "Subject":"[Note] The key file failed to be created",
-	"Content":date + " Please note that the shared directory cannot be accessed and the key file creation fails." +"\r\n"+ "Path:" + path,
-}
+def to_html(self):
+    html = """<html>
+    <head>
+        <style>
+        table, th, td {{
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+        }}
+        </style>
+    </head>
+    <body>
+        <div align="center">
+            <img src="{logo_url}" width="100">
+        </div>
+    
+        <h1>NEWSLETTER</h1>
+        <h3>Date: {date}</h3>
+    
+        <p>This is the Newsletter of the day. The following information is provided.</p>
+    
+        <h3>Summary</h3>
+        <ul>
+            <li>IP, CPU and RAM usage</li>
+            <li>Service Status</li>
+            <li>Logs</li>
+        </ul>
+    
+    <h3> IP, CPU and RAM usage </h3>
+        <p>The IP, CPU and RAM usage are as follows:</p>
+        <table>
+        <tr>
+            <th>Description</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>IP</td>
+            <td>{ip}</td>
+        </tr>
+        <tr>
+            <td>CPU</td>
+            <td>{cpu}</td>
+        </tr>
+        <tr>
+            <td>RAM</td>
+            <td>{ram}</td>
+        </tr>
+        </table>
+    
+        <h3>Service Status</h3>
+        <p>The following is the Service Status:</p>
+        <table>
+        <tr>
+            <th>Service</th>
+            <th>Status</th>
+        </tr>
+        """.format(logo_url=self.logo_url,
+                    date=self.date,
+                    ip=self.ip,
+                    cpu=self.cpu,
+                    ram=self.ram)
 
-class SendMail(object):
+    for service_name, service_status in zip(self.service_names, self.service_status):
+        html += """
+        <tr>
+            <td>{service_name}</td>
+            <td>{service_status}</td>
+        </tr>
+        """.format(service_name=service_name,
+                    service_status=service_status)
 
-    @staticmethod
-    def get_message():
-        message = MIMEMultipart()
-        message['From'] = mail_set['sender']
-        message['To'] = ';'.join(mail_set['receivers'])
-        message['Subject'] = mail_set['Subject']
-        return message
+    html += """
+        </table>
+    
+        <h3>Logs</h3>
+        <p>The following is the Logs:</p>
+        <ul>
+        """
+    for log in self.logs:
+        html += """
+            <li>{log}</li>
+        """.format(log=log)
+        
+    html += """
+        </ul>
+        <p>Disclaimer: {disclaimer}</p>
+    </body>
+    </html>
+    """.format(disclaimer=self.disclaimer)
+    
+    return html
+    
+def smtp_sendemail(mail_to, subject, content):
+    msg = MIMEText(content, 'html')
+    msg['From'] = 'noreply@8088.onmicrosoft.com'
+    msg['To'] = mail_to
+    msg['Subject'] = subject
 
-    def get_content(self):
-        message = self.get_message()
-        content = MIMEText(mail_set['Content'], 'html', 'utf-8')
-        message.attach(content)
-        return message
+    server = smtplib.SMTP('smtp.office365.com', 587)
+    server.starttls() 
+    server.login('noreply@8088.onmicrosoft.com', 'KFCrazy4V50ToMe')
+    server.sendmail('noreply@8088.onmicrosoft.com',mail_to, msg.as_string())
+    server.quit()
 
-    @staticmethod
-    def send(message, receivers):
-        try:
-            smtp_obj = smtplib.SMTP(mail_set['host'])
-            smtp_obj.connect(mail_set['host'], 587)
-            smtp_obj.ehlo()
-            smtp_obj.starttls()
-            smtp_obj.login(mail_set['sender'], mail_set['pwd'])
+mail_to = 'dounsk@outlook.com'
+subject = 'Mail TEST Info '
 
-            smtp_obj.sendmail(mail_set['sender'],
-                              receivers,
-                              message.as_string())
-            print('The notification email was sent successfully!')
-        except smtplib.SMTPException as e:
-            print('Failed，Error：{}'.format(e))
-
-    def run(self):
-        user_message = self.get_content()
-        user_receivers = mail_set['receivers']
-        self.send(user_message, user_receivers)
-
-if os.path.exists(path):
-	folder = random.choice(os.listdir(path))
-	file = str(folder)+'/'+str(uuid.uuid4())+'.key'
-	with open(path+file, 'w', encoding='utf-16') as file_object:
-		file_object.write(BEGIN)
-		for i in range(25):
-			for i in random.sample('QWERTYU+IOPqwertyuiop/ASDFGHJKLasdfghjklZXCVBNM/zxcvbnm+QWERTYU+IOPqwertyuiop/ASDFGHJKLasdfghjklZXCVBNM/zxcvbnm+',65):
-				file_object.write(i)
-			file_object.write("\n")
-		file_object.write(END)
-	file_object.close()
-	print ("The key file is created successfully!")
-else:
-	app = SendMail()
-	app.run()
+if __name__ == '__main__':
+    smtp_sendemail(mail_to, subject, to_html())
+    print('The email was sent successfully')

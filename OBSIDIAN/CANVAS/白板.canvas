@@ -1,0 +1,12 @@
+{
+	"nodes":[
+		{"id":"a607c6d4b67a005d","x":-608,"y":-412,"width":250,"height":60,"type":"text","text":"123"},
+		{"id":"ee0de4cc52b820fd","x":-117,"y":-412,"width":250,"height":60,"type":"text","text":"2023"},
+		{"id":"7aa094229ba054b2","x":-358,"y":-629,"width":250,"height":60,"type":"text","text":"120\n123\n"},
+		{"id":"6a4ff09d593bb802","x":-634,"y":-679,"width":783,"height":400,"type":"group","label":"Lenovo"}
+	],
+	"edges":[
+		{"id":"24629ad146316944","fromNode":"7aa094229ba054b2","fromSide":"bottom","toNode":"a607c6d4b67a005d","toSide":"top"},
+		{"id":"f68cc56ca00bb806","fromNode":"7aa094229ba054b2","fromSide":"bottom","toNode":"ee0de4cc52b820fd","toSide":"top"}
+	]
+}
