@@ -32,4 +32,4 @@
 | 6          | Qlik Sense Codata DEV | 10.122.36.128 | sypqliksense09 |                           | sypqliksense09.lenovo.com | Scheduler2                    |
 
 
-[[Qlik Sense Global - Servers List]]
+[[Project/Lenovo/Qlik Sense Global - Servers List]]

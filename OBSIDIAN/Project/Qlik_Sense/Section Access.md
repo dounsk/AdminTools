@@ -1,3 +1,5 @@
+#QlikSense 
+
 LENOVOAD
 
 INTERNAL\sa_scheduler

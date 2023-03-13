@@ -55,7 +55,7 @@ DisableNewRowApplicator=0
 
 Update DB
 
-[[How to manually upgrade the bundled Qlik Sense PostgreSQL version to 12.5 version]]
+[[Project/Qlik_Sense/HowTo/How to manually upgrade the bundled Qlik Sense PostgreSQL version to 12.5 version]]
 
 修改服务启动状态，//需要以管理员权限执行
 ```powershell

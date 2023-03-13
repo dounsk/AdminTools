@@ -1,0 +1,1 @@
+powershell start-process powershell_ise.exe -verb runas
