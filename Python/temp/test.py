@@ -1,73 +1,53 @@
-'''
- ┌───┐   ┌───┬───┬───┬───┐ ┌───┬───┬───┬───┐ ┌───┬───┬───┬───┐ ┌───┬───┬───┐
- │Esc│   │ F1│ F2│ F3│ F4│ │ F5│ F6│ F7│ F8│ │ F9│F10│F11│F12│ │P/S│S L│P/B│  ┌┐    ┌┐    ┌┐
- └───┘   └───┴───┴───┴───┘ └───┴───┴───┴───┘ └───┴───┴───┴───┘ └───┴───┴───┘  └┘    └┘    └┘
- ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐ ┌───┬───┬───┐ ┌───┬───┬───┬───┐
- │~ `│! 1│@ 2│# 3│$ 4│% 5│^ 6│& 7│* 8│( 9│) 0│_ -│+ =│ BacSp │ │Ins│Hom│PUp│ │N L│ / │ * │ - │
- ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤ ├───┼───┼───┤ ├───┼───┼───┼───┤
- │ Tab │ Q │ W │ E │ R │ T │ Y │ U │ I │ O │ P │{ [│} ]│ | \ │ │Del│End│PDn│ │ 7 │ 8 │ 9 │   │
- ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴─────┤ └───┴───┴───┘ ├───┼───┼───┤ + │
- │ Caps │ A │ S │ D │ F │ G │ H │ J │ K │ L │: ;│" '│ Enter  │               │ 4 │ 5 │ 6 │   │
- ├──────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────────┤     ┌───┐     ├───┼───┼───┼───┤
- │ Shift  │ Z │ X │ C │ V │ B │ N │ M │< ,│> .│? /│  Shift   │     │ ↑ │     │ 1 │ 2 │ 3 │   │
- ├─────┬──┴─┬─┴──┬┴───┴───┴───┴───┴───┴──┬┴───┼───┴┬────┬────┤ ┌───┼───┼───┐ ├───┴───┼───┤ E││
- │ Ctrl│    │Alt │         Space         │ Alt│    │    │Ctrl│ │ ← │ ↓ │ → │ │   0   │ . │←─┘│
- └─────┴────┴────┴───────────────────────┴────┴────┴────┴────┘ └───┴───┴───┘ └───────┴───┴───┘
-'''
+import os
+import time
+import schedule
+import logging
+import datetime
+logging.basicConfig(filename='Python\ScheduledTasks\ScheduledTaskExecution.Log', level=logging.INFO)
+# Define task1
+def task1():
+    os.system('Python\\temp\\test.py')
+    logging.info('Task 1 executed')
+# Define task2
+def task2():
+    os.system('Python\\temp\\test123.py')
+    logging.info('Task 2 executed')
+# Define weekly task3 to run on Fridays
+def task3():
+    os.system('Python\\temp\\123.py')
+    logging.info('Task 3 executed')
+# Define monthly task4 to run on the 15th of every month
+def task4():
+    os.system('Python\\temp\\monthly_script.py')
+    logging.info('Task 4 executed')
+# Set tasks to be enabled and start times
+tasks = {
+    'task1': {'enabled': True, 'start_time': '10:30'},
+    'task2': {'enabled': False, 'start_time': '14:00'},
+    'task3': {'enabled': True, 'start_time': 'Friday 10:00'},
+    'task4': {'enabled': True, 'start_time': '15 10:00'},
+}
+# Check and run tasks
+def check_and_run(tasks):
+    for task, config in tasks.items():
+        if config['enabled']:
+            start_time = config['start_time']
+            # Tasks - [weekly]
+            if start_time.startswith('Friday'):
+                schedule.every().friday.at(start_time.split()[1]).do(eval(task))
+            # Tasks - [monthly]
+            elif start_time.startswith('15'):
+                schedule.every().month.at(start_time.split()[1]).do(eval(task))
+            # Tasks - [daily]
+            else:
+                schedule.every().day.at(start_time).do(eval(task))
+            logging.info(f'{task} scheduled to start at {start_time}')
+        else:
+            logging.info(f'{task} was not executed')
 
-'''
-Author       : Kui.Chen
-Date         : 2022-10-19 16:56:14
-LastEditors  : Kui.Chen
-LastEditTime : 2023-03-10 10:27:34
-FilePath     : \Scripts\Python\temp\test.py
-Description  : 
-Copyright    : Copyright (c) 2023 by Kui.Chen, All Rights Reserved.
-'''
-'''
- ┌─────────────────────────────────────────────────────────────┐
- │┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐│
- ││Esc│!1 │@2 │#3 │$4 │%5 │^6 │&7 │*8 │(9 │)0 │_- │+= │|\ │`~ ││
- │├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┤│
- ││ Tab │ Q │ W │ E │ R │ T │ Y │ U │ I │ O │ P │{[ │}] │ BS  ││
- │├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴─────┤│
- ││ Ctrl │ A │ S │ D │ F │ G │ H │ J │ K │ L │: ;│" '│ Enter  ││
- │├──────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┬───┤│
- ││ Shift  │ Z │ X │ C │ V │ B │ N │ M │< ,│> .│? /│Shift │Fn ││
- │└─────┬──┴┬──┴──┬┴───┴───┴───┴───┴───┴──┬┴───┴┬──┴┬─────┴───┘│
- │      │Fn │ Alt │         Space         │ Alt │Win│   HHKB   │
- │      └───┴─────┴───────────────────────┴─────┴───┘          │
- └─────────────────────────────────────────────────────────────┘
-'''
 
-'''
-Author       : Kui.Chen
-Date         : 2022-10-19 16:56:14
-LastEditors  : Kui.Chen
-LastEditTime : 2023-03-09 17:00:20
-FilePath     : \Scripts\Python\temp\test.py
-Description  : 
-Copyright    : Copyright (c) 2023 by Kui.Chen, All Rights Reserved.
-'''
-
-mixedString = '''
-
-The Nprinting dev-test environment service is migrated to the new server
-
-''' 
-# 转换为全部大写
-UpperString = mixedString.upper()
-# 转换为全部小写
-lowerString = mixedString.lower()
-# 转换为首字母大写  
-capitalizedString = lowerString.title()
-
-# 打印首字母大写
-print("\033[32m {}\033[00m".format('首字母大写：' +
-    capitalizedString))
-# 打印全大写
-print("\033[33m {}\033[00m".format('全大写：' +
-    UpperString))
-# 打印全小写
-print("\033[34m {}\033[00m".format('全小写：' +
-    lowerString))
+check_and_run(tasks)
+# Run scheduled tasks
+while True:
+    schedule.run_pending()
+    time.sleep(1)
