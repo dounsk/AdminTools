@@ -119,8 +119,8 @@ Invoke-Command -ComputerName $EmailAlertServer -Credential $credential -ScriptBl
         }
     # Send email
     $emailSubject = $Using:Hostname + " Qlik Sense Engine Service Crashed"
-    $smtpTo = "qlikplatform@lenovo.com","maxx1@lenovo.com","kuichen1@lenovo.com","zhangzh42@lenovo.com"
-    # $smtpTo = "kuichen1@lenovo.com"
+    # $smtpTo = "qlikplatform@lenovo.com","maxx1@lenovo.com","kuichen1@lenovo.com","zhangzh42@lenovo.com"
+    $smtpTo = "kuichen1@lenovo.com"
     $smtpServer = "Smtpinternal.lenovo.com"
     $smtpFrom = "qlikplatform@lenovo.com"
     $password = 'CgFU-2202'

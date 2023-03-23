@@ -4,7 +4,7 @@ from PIL import Image
 char_set = list(" .,:irsXA253hMHGS#9B&@")
 
 # 打开图片并调整大小
-img = Image.open("Screenshot_2023-03-23_14-52-45.png")
+img = Image.open("Python\Data\logo.png")
 width, height = img.size
 aspect_ratio = height/width
 new_width = 120

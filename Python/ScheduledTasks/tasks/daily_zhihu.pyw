@@ -7,6 +7,7 @@ FilePath     : \Scripts\Python\ScheduledTasks\daily_zhihu.pyw
 Description  : 
 Copyright    : Copyright (c) 2023 by Kui.Chen, All Rights Reserved.
 '''
+import sys
 import bs4
 import json
 import smtplib

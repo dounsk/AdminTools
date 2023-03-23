@@ -1,5 +1,6 @@
 [
   "obsidian-tasks-plugin",
   "calendar",
-  "obsidian-checklist-plugin"
+  "obsidian-checklist-plugin",
+  "obsidian-excel-to-markdown-table"
 ]

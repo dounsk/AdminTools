@@ -2,14 +2,15 @@
 Author       : Kui.Chen
 Date         : 2023-03-09 17:01:59
 LastEditors  : Kui.Chen
-LastEditTime : 2023-03-10 17:51:10
+LastEditTime : 2023-03-22 17:28:09
 FilePath     : \Scripts\Python\Tools\字符串处理.py
 Description  : 字符串处理
 Copyright    : Copyright (c) 2023 by Kui.Chen, All Rights Reserved.
 '''
 mixedString = '''
 
-Your feedback is important to us
+appid	App name	table	field	flag	pii rate	is pii	cii rate	is cii	proportion
+
 
 ''' 
 # 转换为全部大写

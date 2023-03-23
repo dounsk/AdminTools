@@ -1,4 +1,13 @@
 '''
+Author       : Kui.Chen
+Date         : 2023-02-28 10:56:21
+LastEditors  : Kui.Chen
+LastEditTime : 2023-03-23 11:19:50
+FilePath     : \Scripts\Python\Tools\合并csv.py
+Description  : 
+Copyright    : Copyright (c) 2023 by Kui.Chen, All Rights Reserved.
+'''
+'''
 Author: Kui.Chen
 Date: 2023-02-28 10:56:21
 LastEditors: Kui.Chen
@@ -14,9 +23,9 @@ from datetime import datetime
 
 # ^ ------------------------------------------------------------------------
 # ! 确认并修改为需要的路径和文件类型
-scan_directory = 'C:\\Users\\douns\\Downloads\\csv'
+scan_directory = r'\\10.122.36.118\QlikOperations\QsTaskStatus'
 file_type = ".csv"
-export_directory = 'C:\\Users\\douns\\Downloads'
+export_directory = 'Python\Data\get'
 # ^ ------------------------------------------------------------------------
 
 suffix      = datetime.now().strftime('%Y%m%d%H%M%S')

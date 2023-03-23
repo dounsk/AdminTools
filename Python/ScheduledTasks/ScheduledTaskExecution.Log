@@ -1,0 +1,20 @@
+
+[2023-03-20 11:35:57] Job minutes started, running script Python\SMTP\miniSMTP.py.
+[2023-03-20 12:04:00] Job minutes started, running script Python\SMTP\miniSMTP.py.
+[2023-03-20 13:46:07] Job minutes started, running script Python\SMTP\miniSMTP.py.
+[2023-03-20 13:46:07] Job minutes failed with error: Command '['python', 'Python\\SMTP\\miniSMTP.py']' returned non-zero exit status 2.
+[2023-03-20 13:52:38] Job minutes_tst started, running script D:\OneDrive - 8088\Scripts\Python\SMTP\miniSMTP.py.
+[2023-03-20 13:56:00] Job minutes_tst started, running script D:\OneDrive - 8088\Scripts\Python\SMTP\miniSMTP.py.
+[2023-03-20 14:05:53] Job minutes_tst started, running script D:\OneDrive - 8088\Scripts\Python\SMTP\miniSMTP.py.
+[2023-03-20 14:06:56] Job minutes_tst started, running script D:\OneDrive - 8088\Scripts\Python\SMTP\miniSMTP.py.
+[2023-03-20 14:21:03] Job minutes_tst started, running script D:\OneDrive - 8088\Scripts\Python\SMTP\miniSMTP.py.
+[2023-03-20 14:22:07] Job minutes_tst started, running script D:\OneDrive - 8088\Scripts\Python\SMTP\miniSMTP.py.
+[2023-03-20 14:23:09] Job minutes_tst started, running script D:\OneDrive - 8088\Scripts\Python\SMTP\miniSMTP.py.
+[2023-03-20 14:24:13] Job minutes_tst started, running script D:\OneDrive - 8088\Scripts\Python\SMTP\miniSMTP.py.
+[2023-03-20 14:25:17] Job minutes_tst started, running script D:\OneDrive - 8088\Scripts\Python\SMTP\miniSMTP.py.
+[2023-03-21 00:10:57] Job daily_Qs_task_performance started, running script D:\OneDrive - 8088\Scripts\Python\ScheduledTasks	asks\Qs_task_performance.pyw.
+[2023-03-21 00:10:57] Job daily_Qs_task_performance failed with error: Command '['python', 'D:\\OneDrive - 8088\\Scripts\\Python\\ScheduledTasks\tasks\\Qs_task_performance.pyw']' returned non-zero exit status 2.
+[2023-03-22 00:10:09] Job daily_Qs_task_performance started, running script D:\OneDrive - 8088\Scripts\Python\ScheduledTasks	asks\Qs_task_performance.pyw.
+[2023-03-22 00:10:09] Job daily_Qs_task_performance failed with error: Command '['python', 'D:\\OneDrive - 8088\\Scripts\\Python\\ScheduledTasks\tasks\\Qs_task_performance.pyw']' returned non-zero exit status 2.
+[2023-03-22 17:02:34] Job weekly_Wed_keepalive started, running script D:\OneDrive - 8088\Scripts\Python\ScheduledTasks	asks\keepalive.pyw.
+[2023-03-22 17:02:35] Job weekly_Wed_keepalive failed with error: Command '['python', 'D:\\OneDrive - 8088\\Scripts\\Python\\ScheduledTasks\tasks\\keepalive.pyw']' returned non-zero exit status 2.
