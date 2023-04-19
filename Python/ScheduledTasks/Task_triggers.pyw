@@ -2,7 +2,7 @@
 Author       : Kui.Chen
 Date         : 2023-01-13 16:31:35
 LastEditors  : Kui.Chen
-LastEditTime : 2023-03-22 13:50:27
+LastEditTime : 2023-03-31 09:47:47
 FilePath     : \Scripts\Python\ScheduledTasks\Task_triggers.pyw
 Description  : Schedule task triggers
 Copyright    : Copyright (c) 2023 by Kui.Chen, All Rights Reserved.
@@ -18,32 +18,33 @@ tasks = {
     "minutes_tst": {
     # for test
         "enabled": False,
-        "interval": "1 minutes",
-        "script": "D:\OneDrive - 8088\Scripts\Python\SMTP\miniSMTP.py"
+        "interval": "5 minutes",
+        # "script": r"D:\OneDrive - 8088\Scripts\Python\SMTP\miniSMTP.py"
+        "script": r"D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\keepalive.pyw"
     },
     "hourly": {
     # 每小时能干啥？还没有想好，不启用先 😁
         "enabled": False,
         "interval": "hourly at 10 minutes past the hour",
-        "script": "script2.py"
+        "script": r"script2.py"
     },
     "daily_Qs_task_performance": {
     # qliksense task scheduler load performance
-        "enabled": False,
-        "interval": "daily at 00:10",
-        "script": "D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\Qs_task_performance.pyw"
+        "enabled": True,
+        "interval": "daily at 23:58",
+        "script": r"D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\Qs_task_performance.pyw"
     },
     "weekly_Wed_keepalive": {
     # admin keep alive
         "enabled": True,
         "interval": "every Wednesday at 17:00",
-        "script": "D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\keepalive.pyw"
+        "script": r"D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\keepalive.pyw"
     },
     "weekly_Fri_dms": {
     # dead man's switch
         "enabled": True,
         "interval": "every Friday at 17:00",
-        "script": "D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\dms.py"
+        "script": r"D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\dms.py"
     }
 }
 
@@ -53,7 +54,7 @@ def job(task):
     with open(log, "a") as f:
         f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}] Job {task} started, running script {script_name}.\n")
     try:
-        subprocess.run(["python", script_name], check=True)
+        subprocess.run(["C:\\Python\\python.exe", script_name], check=True)
     except subprocess.CalledProcessError as e:
         error_msg = str(e)
         print(f"[{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}] Job {task} failed with error: {error_msg}")
@@ -95,4 +96,4 @@ def check_tasks():
 check_tasks()
 while True:
     schedule.run_pending()
-    time.sleep(360)
+    time.sleep(300)

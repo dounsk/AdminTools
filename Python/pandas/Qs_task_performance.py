@@ -2,7 +2,7 @@
 Author       : Kui.Chen
 Date         : 2023-03-17 09:59:42
 LastEditors  : Kui.Chen
-LastEditTime : 2023-03-23 11:22:26
+LastEditTime : 2023-03-30 13:47:23
 FilePath     : \Scripts\Python\pandas\Qs_task_performance.py
 Description  : 使用 pandas 从共享目录获取 QS Task Scheduler load 数据并通过邮件发送给接用户
 Copyright    : Copyright (c) 2023 by Kui.Chen, All Rights Reserved.
@@ -17,8 +17,8 @@ import datetime
 
 # 时间 🕙
 date = datetime.datetime.now().strftime('%Y%m%d') 
-# source_file = "//10.122.36.118/QlikOperations/QsTaskStatus/QlikSense_TaskStatus_" + date + ".csv"
-source_file = "Python\Data\get\merged_file_20230323111953.csv"
+source_file = "//10.122.36.118/QlikOperations/QsTaskStatus/QlikSense_TaskStatus_" + date + ".csv"
+# source_file = "Python\Data\get\merged_file_20230323111953.csv"
 # 读取CSV文件数据
 df = pd.read_csv(source_file, usecols=["DateTime", "Started_Number", "Queued_Number", "ExecutingNodeName"])
 # 将DateTime列转换为datetime类型，并设置为索引

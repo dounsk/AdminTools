@@ -11,7 +11,7 @@
 ```
 
 ```
-pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pandas
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple tkcalendar
 ```
 
 ### （2）永久修改：

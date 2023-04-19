@@ -1,0 +1,186 @@
+{
+  "id": "de43a726-4f04-44fe-bb2b-5c2e305659b7",
+  "version": "2.0",
+  "name": "vizlib",
+  "url": "https://portal.vizlib.com",
+  "tests": [{
+    "id": "6471cec3-babe-4ccb-86d1-9efc6c13bca4",
+    "name": "DELETE Vizlib ID",
+    "commands": [{
+      "id": "9b756ab4-f041-4ed3-ad7c-bce2b9d89c95",
+      "comment": "",
+      "command": "//open",
+      "target": "/pages/my-account/overview/vizliblibrary",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "46d1800d-cbee-411b-9abf-87ab169c43e4",
+      "comment": "",
+      "command": "open",
+      "target": "/pages/my-account/overview/vizlibselfservice",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "05fe19cb-4cf2-467a-975f-8754eba330d6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1735x959",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b90ff66b-4d75-4b07-a14f-3d49785d9f89",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.mat-row:nth-child(1) .mat-icon",
+      "targets": [
+        ["css=.mat-row:nth-child(1) .mat-icon", "css:finder"],
+        ["xpath=//button/mat-icon", "xpath:position"],
+        ["xpath=//mat-icon[contains(.,'delete_forever')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ee1d6854-2b4c-4b98-8c8e-8187ae7b5424",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mat-row:nth-child(1) .mat-icon",
+      "targets": [
+        ["css=.mat-row:nth-child(1) .mat-icon", "css:finder"],
+        ["xpath=//button/mat-icon", "xpath:position"],
+        ["xpath=//mat-icon[contains(.,'delete_forever')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cffc1ec9-ef0f-42da-9b06-5909c70ff139",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.mat-row:nth-child(1) .mat-icon",
+      "targets": [
+        ["css=.mat-row:nth-child(1) .mat-icon", "css:finder"],
+        ["xpath=//button/mat-icon", "xpath:position"],
+        ["xpath=//mat-icon[contains(.,'delete_forever')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9b085738-271e-493e-b838-f210b935b811",
+      "comment": "",
+      "command": "type",
+      "target": "id=mat-input-1",
+      "targets": [
+        ["id=mat-input-1", "id"],
+        ["css=#mat-input-1", "css:finder"],
+        ["xpath=//input[@id='mat-input-1']", "xpath:attributes"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-0']/vizlib-portal-delelete-user-modal/div/div[4]/form/mat-form-field/div/div/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "DELETE"
+    }, {
+      "id": "5fb3fe61-18b1-4263-87e2-9db03a6b73a4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.primary-button--blue",
+      "targets": [
+        ["css=.primary-button--blue", "css:finder"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-0']/vizlib-portal-delelete-user-modal/div/div[5]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[5]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Confirm')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ab008b99-27a4-4fee-b058-8849353cc7fa",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return 1",
+      "targets": [],
+      "value": "num"
+    }, {
+      "id": "e7f524bb-3284-4d01-97ac-324e23d2cb0e",
+      "comment": "",
+      "command": "do",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9c9b2132-90e4-4e16-b302-b8f81f637050",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${num}+1",
+      "targets": [],
+      "value": "num"
+    }, {
+      "id": "1ec27cba-8caa-4af3-919e-6389739f01d5",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.mat-row:nth-child(1) .mat-icon",
+      "targets": [
+        ["css=.mat-row:nth-child(1) .mat-icon", "css:finder"],
+        ["xpath=//button/mat-icon", "xpath:position"],
+        ["xpath=//mat-icon[contains(.,'delete_forever')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "00470790-5418-4dff-b665-1007b1e3199a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mat-row:nth-child(1) .mat-icon",
+      "targets": [
+        ["css=.mat-row:nth-child(1) .mat-icon", "css:finder"],
+        ["xpath=//button/mat-icon", "xpath:position"],
+        ["xpath=//mat-icon[contains(.,'delete_forever')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9f47d364-52ef-4b94-bdd0-3e3c2ef3cffc",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.mat-row:nth-child(1) .mat-icon",
+      "targets": [
+        ["css=.mat-row:nth-child(1) .mat-icon", "css:finder"],
+        ["xpath=//button/mat-icon", "xpath:position"],
+        ["xpath=//mat-icon[contains(.,'delete_forever')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "afe27ee6-90e7-48fd-9921-97a6cb28c499",
+      "comment": "",
+      "command": "type",
+      "target": "id=mat-input-${num}",
+      "targets": [
+        ["id=mat-input-2", "id"],
+        ["css=#mat-input-2", "css:finder"],
+        ["xpath=//input[@id='mat-input-2']", "xpath:attributes"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-1']/vizlib-portal-delelete-user-modal/div/div[4]/form/mat-form-field/div/div/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "DELETE"
+    }, {
+      "id": "5a166050-84bc-4b99-8319-f14475fa76d8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.primary-button--blue",
+      "targets": [
+        ["css=.primary-button--blue", "css:finder"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-1']/vizlib-portal-delelete-user-modal/div/div[5]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[5]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Confirm')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "de8b1365-c985-468e-a73f-8604d9e66080",
+      "comment": "",
+      "command": "repeatIf",
+      "target": "${num}<11",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "1055c916-e48d-435b-95e9-ce63eea9d62d",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["6471cec3-babe-4ccb-86d1-9efc6c13bca4"]
+  }],
+  "urls": ["https://portal.vizlib.com/"],
+  "plugins": []
+}

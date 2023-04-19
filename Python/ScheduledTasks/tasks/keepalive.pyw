@@ -2,8 +2,8 @@
 Author       : Kui.Chen
 Date         : 2022-10-19 16:56:14
 LastEditors  : Kui.Chen
-LastEditTime : 2023-03-08 11:03:30
-FilePath     : \Scripts\Python\ScheduledTasks\keepalive.pyw
+LastEditTime : 2023-03-30 11:05:08
+FilePath     : \Scripts\Python\ScheduledTasks\tasks\keepalive.pyw
 Description  : admin keep alive 定时推迟执行的目标日期
 Copyright    : Copyright (c) 2023 by Kui.Chen, All Rights Reserved.
 '''
@@ -52,7 +52,7 @@ def delay(days_num):
     return date_month_later
 
 if __name__ == '__main__':
-    path     = '//10.122.84.180//QlikSenseSharedPersistence//Apps/Search//'
+    path     = r'\\10.122.84.180\QlikSenseSharedPersistence\Apps\Search'
     # !             ---
     keywords = delay(99)
     # !             ---

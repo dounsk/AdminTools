@@ -1,4 +1,12 @@
-
+'''
+Author       : Kui.Chen
+Date         : 2023-04-14 16:59:43
+LastEditors  : Kui.Chen
+LastEditTime : 2023-04-19 10:43:32
+FilePath     : \Scripts\Python\DataBase\mysql_insert_into.py
+Description  : 
+Copyright    : Copyright (c) 2023 by Kui.Chen, All Rights Reserved.
+'''
 import psycopg2
 import pymysql
 import configparser
@@ -41,26 +49,26 @@ if __name__ == '__main__':
     cur = conn.cursor()
 
     sql = """
-    SELECT 
-        TO_CHAR(current_timestamp, 'yyyy-MM-dd HH24:MI:SS') AS "DateTime", 
-        COUNT(CASE WHEN "Status" = '2' THEN 1 END) AS "Started_Number", 
-        COUNT(CASE WHEN "Status" = '3' THEN 1 END) AS "Queued_Number", 
-        "ExecutingNodeName" 
-    FROM 
-        "ExecutionResults" 
-    GROUP BY 
-        "ExecutingNodeName";
+    SELECT COUNT("ID") FROM "Users";
+    SELECT COUNT("ID") FROM "Users" WHERE "UserDirectory" = 'LENOVOAD';
+    SELECT COUNT("ID") FROM "Streams";
+    SELECT COUNT("ID") FROM "Apps";
+    SELECT COUNT("ID") FROM "ReloadTasks";
+
     """
     cur.execute(sql)
     results = cur.fetchall()
     for result in results:
         if result[1] > 1:
-            Started_Number = result[1]
-            Queued_Number = result[2]
-            ExecutingNodeName = result[3]
-            insertinto = 'INSERT INTO scheduled_task_executions (id, DATETIME, ExecutingNode, Started, Queued) '
-            insertinto += f"VALUES (null, NOW(), '{ExecutingNodeName}', '{Started_Number}', '{Queued_Number}');"
+            users_total = result[0]
+            users_lenovoad = result[1]
+            stream = result[2]
+            apps = result[3]
+            tasks = result[4]
+            insertinto = 'INSERT INTO qs_platform_usage (id, DATE, users_total, users_lenovoad, stream, apps, tasks) '
+            insertinto += f"VALUES (null, NOW(), '{users_total}', '{users_lenovoad}', '{stream}', '{apps}', '{tasks}');"
             # 插入到Mysql
-            implement(insertinto)
+            print(insertinto)
+            # implement(insertinto)
     cur.close()
     conn.close()

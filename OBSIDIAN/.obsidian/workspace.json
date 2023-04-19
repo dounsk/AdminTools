@@ -13,14 +13,28 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Daily/2023-03-21_星期二.md",
+                "file": "Documentation/SQL/SQL 命令.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e60f0768076623b0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Documentation/SQL/mysql.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -97,7 +111,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Daily/2023-03-21_星期二.md"
+                "file": "Documentation/SQL/mysql.md"
               }
             }
           },
@@ -123,7 +137,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Daily/2023-03-21_星期二.md",
+                "file": "Documentation/SQL/mysql.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -160,35 +174,38 @@
       "zk-prefixer:创建时间戳笔记": false
     }
   },
-  "active": "500932a8e48a7658",
+  "active": "e60f0768076623b0",
   "lastOpenFiles": [
-    "Documentation/HTML/HTML 格式.md",
-    "Daily/2023-03-21_星期二.md",
-    "Project/Qlik_Sense/Vizlib Version.md",
-    "Documentation/HTML/未命名.md",
-    "Documentation/SQL/SQL 命令.md",
-    "Documentation/Python/print (color_code).md",
-    "Documentation/Python/pip.md",
-    "Documentation/Python/datetimes.md",
-    "Documentation/Python/csv.md",
-    "Daily/2023-03-16_星期四.md",
-    "Daily/2023-03-10_星期五.md",
-    "Attached/Pasted image 20230316110237.png",
-    "Documentation/Windows/PowerShell 常用命令.md",
-    "Attached/template/full.md",
-    "Daily/2023-03-15_星期三.md",
-    "Documentation/HTML/http 状态码详解.md",
-    "Daily/2023-03-13_星期一.md",
     "Project/Lenovo/DataBase Password.md",
-    "Meeting/未命名.md",
+    "Documentation/SQL/mysql.md",
+    "Documentation/SQL/SQL 命令.md",
+    "Daily/2023-04-17_星期一.md",
+    "Daily/2023-04-13_星期四.md",
+    "Daily/2023-03-09 周四.md",
+    "CANVAS/白板 🎨.canvas",
+    "Documentation/Python/print (color_code).md",
+    "Daily/2023-03-30_星期四.md",
+    "Daily/2023-04-04_星期二.md",
+    "Documentation/2023 AI 工具合集文档.md",
     "Project/Lenovo/服务器上的硬盘类型、RAID和RAID控制器.md",
-    "Project/Qlik_Sense/Qliksense Cluster Info.md",
-    "Project/Qlik_Sense/QlikSense App Clean-up.md",
+    "Documentation/Windows/常用的Windows命令.md",
+    "Documentation/Windows/获取Windows 环境路径.md",
+    "Documentation/Python/datetimes.md",
+    "Documentation/HTML/http 状态码详解.md",
+    "Documentation/Knowledge/运维自动化.md",
+    "Documentation/Knowledge/在 Windows 服务器上部署 Grafana 的步骤.md",
+    "Documentation/Python/csv.md",
+    "Documentation/HTML/HTML 格式.md",
+    "Attached/Pasted image 20230331154814.png",
+    "Documentation/未命名.md",
+    "Documentation/Knowledge",
+    "Daily/2023-03-29_星期三.md",
+    "Daily/2023-03-27_星期一.md",
+    "Daily/2023-03-21_星期二.md",
+    "Project/Lenovo/CoData REST API.md",
     "Project/Qlik_Sense/Qlik Sense Upgrade.md",
     "Project/Qlik_Sense/Qlik NPrinting license.md",
-    "Project/Qlik_Sense/PostgreSQL backup.md",
-    "Project/Qlik_Sense/Firewall Requests.md",
-    "Project/Lenovo/Qlik Sense Global - Servers List.md",
+    "Attached/Pasted image 20230316110237.png",
     "Documentation/HTML",
     "Documentation/SQL",
     "Attached/Pasted image 20230310161501.png",
@@ -199,7 +216,6 @@
     "Attached/Pasted image 20230210114444.png",
     "Attached/Pasted image 20230210114943.png",
     "CANVAS/未命名.canvas",
-    "CANVAS/白板 🎨.canvas",
     "Project/Lenovo",
     "Project/Qlik_Sense/HowTo",
     "未命名.canvas"

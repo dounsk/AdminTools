@@ -2,13 +2,14 @@
 Author       : Kui.Chen
 Date         : 2022-10-19 16:56:14
 LastEditors  : Kui.Chen
-LastEditTime : 2023-04-17 09:55:21
-FilePath     : \Scripts\Python\temp\test.py
+LastEditTime : 2023-04-19 15:38:34
+FilePath     : \Scripts\Python\DataBase\mysql_Createtable.py
 Description  : update to mysql
 Copyright    : Copyright (c) 2023 by Kui.Chen, All Rights Reserved.
 '''
 
 import pymysql
+import configparser
 
 def connect():
     '''连接MySQL数据库'''
@@ -44,25 +45,34 @@ def implement(sql):
 
 sql  = """
 
-# CREATE TABLE IF NOT EXISTS `scheduled_task_executions`(
+# 建表语句：
+# CREATE TABLE IF NOT EXISTS `qs_platform_usage`(
 #    `id` INT UNSIGNED AUTO_INCREMENT,
-#    `DateTime` DATETIME,
-#    `ExecutingNode` VARCHAR(20) NOT NULL,
-#    `Started`  DECIMAL(10,0),
-#    `Queued`  DECIMAL(10,0),
+#    `date` DATE,
+#     `users_total`  DECIMAL(10,0),
+#    `users_lenovoad`  DECIMAL(10,0),
+#    `streams_count`  DECIMAL(10,0),
+#    `apps_count`  DECIMAL(10,0),
+#    `reload_tasks_count`  DECIMAL(10,0),
 #    PRIMARY KEY ( `id` )
 # )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-# desc scheduled_task_executions;
+# 查询表结构：
+# desc qs_platform_usage;
 
-# selete * form scheduled_task_executions;
+# 查询
+# SELECT * FROM scheduled_task_executions limit 100;
 
--- 创建用于数据采集的用户
-CREATE USER 'data_collector'@% IDENTIFIED BY 'GetData#4Anywhere';
-# -- 授予该用户读取和写入数据库的权限
-# GRANT SELECT, INSERT, UPDATE ON database_name.* TO 'data_collector'@'localhost';
-# -- 禁止该用户删除表的权限
-# REVOKE DROP ON database_name.* FROM 'data_collector'@'localhost';
+# 删除表：
+# DROP TABLE `qs_platform_usage` ;
+
+# 检查用户权限
+# SHOW GRANTS FOR 'data_collector'@'%';
+
+# GRANT SELECT, INSERT, UPDATE ON qliksense.* TO 'data_collector'@'%';
+# flush privileges;
+
+# INSERT INTO qs_platform_usage ( date, users_total, users_lenovoad, streams_count, apps_count, reload_tasks_count) VALUES ( CURDATE(), '23814', '19311', '330', '3352', '3969');
 
 """
 

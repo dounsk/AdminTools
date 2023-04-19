@@ -18,3 +18,26 @@
 [2023-03-22 00:10:09] Job daily_Qs_task_performance failed with error: Command '['python', 'D:\\OneDrive - 8088\\Scripts\\Python\\ScheduledTasks\tasks\\Qs_task_performance.pyw']' returned non-zero exit status 2.
 [2023-03-22 17:02:34] Job weekly_Wed_keepalive started, running script D:\OneDrive - 8088\Scripts\Python\ScheduledTasks	asks\keepalive.pyw.
 [2023-03-22 17:02:35] Job weekly_Wed_keepalive failed with error: Command '['python', 'D:\\OneDrive - 8088\\Scripts\\Python\\ScheduledTasks\tasks\\keepalive.pyw']' returned non-zero exit status 2.
+[2023-03-24 17:04:42] Job weekly_Fri_dms started, running script D:\OneDrive - 8088\Scripts\Python\ScheduledTasks	asks\dms.py.
+[2023-03-24 17:04:42] Job weekly_Fri_dms failed with error: Command '['C:\\Python\\python.exe', 'D:\\OneDrive - 8088\\Scripts\\Python\\ScheduledTasks\tasks\\dms.py']' returned non-zero exit status 2.
+[2023-03-29 17:02:34] Job weekly_Wed_keepalive started, running script D:\OneDrive - 8088\Scripts\Python\ScheduledTasks	asks\keepalive.pyw.
+[2023-03-29 17:02:34] Job weekly_Wed_keepalive failed with error: Command '['C:\\Python\\python.exe', 'D:\\OneDrive - 8088\\Scripts\\Python\\ScheduledTasks\tasks\\keepalive.pyw']' returned non-zero exit status 2.
+[2023-03-30 10:51:27] Job minutes_tst started, running script D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\keepalive.pyw.
+[2023-03-30 10:58:14] Job minutes_tst started, running script D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\keepalive.pyw.
+[2023-03-30 11:03:16] Job minutes_tst started, running script D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\keepalive.pyw.
+[2023-03-30 11:08:18] Job minutes_tst started, running script D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\keepalive.pyw.
+[2023-03-30 11:13:21] Job minutes_tst started, running script D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\keepalive.pyw.
+[2023-03-30 11:18:26] Job minutes_tst started, running script D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\keepalive.pyw.
+[2023-03-30 11:26:20] Job minutes_tst started, running script D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\keepalive.pyw.
+[2023-03-31 00:14:59] Job daily_Qs_task_performance started, running script D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\Qs_task_performance.pyw.
+[2023-03-31 17:00:06] Job weekly_Fri_dms started, running script D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\dms.py.
+[2023-04-13 23:58:11] Job daily_Qs_task_performance started, running script D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\Qs_task_performance.pyw.
+[2023-04-13 23:58:17] Job daily_Qs_task_performance failed with error: Command '['C:\\Python\\python.exe', 'D:\\OneDrive - 8088\\Scripts\\Python\\ScheduledTasks\\tasks\\Qs_task_performance.pyw']' returned non-zero exit status 1.
+[2023-04-14 17:03:19] Job weekly_Fri_dms started, running script D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\dms.py.
+[2023-04-14 17:03:19] Job weekly_Fri_dms failed with error: Command '['C:\\Python\\python.exe', 'D:\\OneDrive - 8088\\Scripts\\Python\\ScheduledTasks\\tasks\\dms.py']' returned non-zero exit status 1.
+[2023-04-17 09:28:43] Job daily_Qs_task_performance started, running script D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\Qs_task_performance.pyw.
+[2023-04-17 09:28:56] Job daily_Qs_task_performance failed with error: Command '['C:\\Python\\python.exe', 'D:\\OneDrive - 8088\\Scripts\\Python\\ScheduledTasks\\tasks\\Qs_task_performance.pyw']' returned non-zero exit status 1.
+[2023-04-17 23:58:54] Job daily_Qs_task_performance started, running script D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\Qs_task_performance.pyw.
+[2023-04-17 23:59:45] Job daily_Qs_task_performance failed with error: Command '['C:\\Python\\python.exe', 'D:\\OneDrive - 8088\\Scripts\\Python\\ScheduledTasks\\tasks\\Qs_task_performance.pyw']' returned non-zero exit status 1.
+[2023-04-18 23:59:48] Job daily_Qs_task_performance started, running script D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\Qs_task_performance.pyw.
+[2023-04-18 23:59:52] Job daily_Qs_task_performance failed with error: Command '['C:\\Python\\python.exe', 'D:\\OneDrive - 8088\\Scripts\\Python\\ScheduledTasks\\tasks\\Qs_task_performance.pyw']' returned non-zero exit status 1.

@@ -18,29 +18,32 @@ import csv
 import time
 from datetime import datetime, timedelta
 
+app_id = "8d8c1658-acb5-4ae2-bfb5-e1131d1068d0"
 export_directory = 'C://Users//douns//Downloads//'
+
 # 格式化时间
 suffix      = datetime.now().strftime('%Y%m%d%H%M%S')
-export_file = export_directory + 'The duration of the QlikSense tasks _' + suffix +'.csv'
+export_file = export_directory + 'QsTaskDuration_' + app_id + '_' + suffix +'.csv'
 
-nodes = ["sypqliksense05","sypqliksense06","sypqliksense07","sypqliksense08","sypqliksense17"]
-for node in nodes:
-
-    # scan_directory = 'C:\\Users\\douns\\Downloads\\Logs'
-    scan_directory = '//10.122.84.180/QlikLogBackUp/LogBackUp_2023-02-01/'+node+'/Script'
-    # 创建筛选范围，以此扫描日志最后修改时间在 days 之内的日志文件
-    monthAgo = datetime.now() - timedelta(days=3000)
-
-    # 获取文件夹中的所有Log文件
-    files = os.listdir(scan_directory)
-    # 创建csv文件
-    with open(export_file, 'w', newline='') as csvfile:
-        writer = csv.writer(csvfile, delimiter=',', lineterminator='\n')
-        # 写入表头
-        writer.writerow(['App ID' , 'Total Rows'  , 'Execution Started Time', 'Execution Finished Time' , 'Interval' , 'Execution Results' , 'Connection Name' ])
-        # 遍历每个文件
+# 创建csv文件
+with open(export_file, 'a', newline='') as csvfile:
+    writer = csv.writer(csvfile, delimiter=',', lineterminator='\n')
+    # 写入表头
+    writer.writerow(['App ID' , 'Total Rows'  , 'Execution Node' , 'Execution Started Time' , 'Execution Finished Time' , 'Interval' , 'Execution Results' , 'Connection Name' ])
+    nodes = ["sypqliksense05","sypqliksense06","sypqliksense07","sypqliksense08","sypqliksense17"]
+    for node in nodes:
+        # scan_directory = "C://Users//douns//Downloads//csv//sypqliksense05"
+        scan_directory = '//10.122.84.180/QlikSenseSharedPersistence/ArchivedLogs/'+node+'/Script'
+        # 创建筛选范围，以此扫描日志最后修改时间在 days 之内的日志文件
+        monthAgo = datetime.now() - timedelta(days=300)
+        # 获取文件夹中的所有Log文件
+        files = os.listdir(scan_directory)
+            # 遍历每个文件
         for file in files:
-            if file.endswith(".log"):
+            # 扫描指定 APP ID
+            if app_id in file:
+            # 扫描全部 LOG
+            # if file.endswith(".log"):
                 # 获取文件最后修改时间
                 last_modified_time = os.path.getmtime(scan_directory + '/' + file)
                 date = datetime.fromtimestamp(last_modified_time)
@@ -85,14 +88,17 @@ for node in nodes:
                     total_rows  = sum(data_rows)
                     connections = list(set(connections))
                     # 写入数据到csv文件中
-                    writer.writerow([appid, total_rows , execution_started , execution_finished, "" , execution_results ,  connections ])
+                    writer.writerow([appid, total_rows , node , execution_started , execution_finished, "" , execution_results ,  connections ])
                     # 将每一个 Connection 分列保存
                     # writer.writerow([appid, total_rows , execution_started , execution_finished, "" , execution_results ,  *connections ])
                     # 关闭日志文件
                     log_file.close()
                 else:
                     print("指定时间范围内没有日志")
-print('-- The log check has completed. --')
+            else:
+                continue
+
+print(("-- The log check for {} has completed. --").format(app_id))
 csvfile.close()
 # 打开下载目录
 os.startfile(export_directory)
