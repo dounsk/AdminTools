@@ -1,4 +1,4 @@
-
+用户权限：
 ```mysql
 -- 创建用户
 CREATE USER 'data_collector'@'localhost' IDENTIFIED BY 'GetData4Anywhere';
@@ -15,6 +15,7 @@ REVOKE DROP ON qliksense.* FROM 'data_collector'@'%';
 DROP TABLE `qs_platform_usage` ;
 ```
 
+建表语句：
 ```mysql
 CREATE TABLE IF NOT EXISTS `qs_platform_usage`(
 	`id` INT UNSIGNED AUTO_INCREMENT,
@@ -28,8 +29,8 @@ CREATE TABLE IF NOT EXISTS `qs_platform_usage`(
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
 
+数据插入：
 ```mysql
-
 INSERT INTO qs_platform_usage ( 
 date, users_total, users_lenovoad, streams_count, apps_count, reload_tasks_count
 ) 
