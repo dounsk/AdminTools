@@ -11,9 +11,8 @@ Initial-1
 
 
 #### Qlik Platform
-
-```
 qlikplatform@lenovo.com
+```
 CgFU-2202
 ```
 

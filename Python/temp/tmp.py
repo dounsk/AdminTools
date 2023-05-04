@@ -1,66 +1,30 @@
-
-import psycopg2
-import pymysql
-import configparser
-
-def connect():
-    '''连接MySQL数据库'''
-    try:
-        config = configparser.ConfigParser()
-        config.read('Python\DataBase\config.ini')
-        db = pymysql.connect(
-            host    = config.get('data_connection', 'host'),
-            port    = int(config.get('data_connection', 'port')),
-            user    = config.get('system_info', 'startup'),
-            passwd  = config.get('system_info', 'configuration'),
-            db      = config.get('data_connection', 'database'),
-            charset = config.get('system_info', 'encoding')
-            )
-        return db
-    except Exception:
-        raise Exception("Failed")
-
-def implement(sql):
-    '''执行SQL语句'''
-    db = connect()
-    cursor = db.cursor()
-    for i in range(1):
-        try:
-            cursor.execute(sql)
-            result = cursor.fetchone()
-            db.commit()
-            print('return:', result)
-        except Exception:
-            db.rollback()
-            print("error")
-    cursor.close()
-    db.close()
-
-if __name__ == '__main__':
-    conn = psycopg2.connect(host='10.122.36.117', port=4432, dbname='QSR', user='postgres', password='abcd-1234')
-    cur = conn.cursor()
-
-    sql = """
-    SELECT 
-        TO_CHAR(current_timestamp, 'yyyy-MM-dd HH24:MI:SS') AS "DateTime", 
-        COUNT(CASE WHEN "Status" = '2' THEN 1 END) AS "Started_Number", 
-        COUNT(CASE WHEN "Status" = '3' THEN 1 END) AS "Queued_Number", 
-        "ExecutingNodeName" 
-    FROM 
-        "ExecutionResults" 
-    GROUP BY 
-        "ExecutingNodeName";
-    """
-    cur.execute(sql)
-    results = cur.fetchall()
-    for result in results:
-        if result[1] > 1:
-            Started_Number = result[1]
-            Queued_Number = result[2]
-            ExecutingNodeName = result[3]
-            insertinto = 'INSERT INTO scheduled_task_executions (id, DATETIME, ExecutingNode, Started, Queued) '
-            insertinto += f"VALUES (null, NOW(), '{ExecutingNodeName}', '{Started_Number}', '{Queued_Number}');"
-            # 插入到Mysql
-            implement(insertinto)
-    cur.close()
-    conn.close()
+# IP 主机角色对照表
+ip_host_role = {
+    "10.122.36.100": {"hostname": "SYPQLIKSENSE15", "role": "[Qs_Prd] Proxy Engine 04"},
+    "10.122.36.106": {"hostname": "SYPQLIKSENSE18", "role": "[Qs_Prd] Proxy Engine 05"},
+    "10.122.36.107": {"hostname": "SYPQLIKSENSE11", "role": "[Qs_Prd] Proxy Engine 01"},
+    "10.122.36.108": {"hostname": "SYPQLIKSENSE12", "role": "[Qs_Prd] Proxy Engine 02"},
+    "10.122.36.109": {"hostname": "SYPQLIKSENSE13", "role": "[Qs_Prd] Proxy Engine 03"},
+    "10.122.36.110": {"hostname": "SYPQLIKSENSE14", "role": "[Qs_Prd] API 02"},
+    "10.122.36.119": {"hostname": "SYPQLIKSENSE03", "role": "[Qs_Prd] API 01"},
+    "10.122.36.120": {"hostname": "SYPQLIKSENSE04", "role": "[Qs_Prd] Central Master & Scheduler Master"},
+    "10.122.36.121": {"hostname": "SYPQLIKSENSE05", "role": "[Qs_Prd] Scheduler 05"},
+    "10.122.36.122": {"hostname": "SYPQLIKSENSE06", "role": "[Qs_Prd] Central Candidate & Scheduler 01"},
+    "10.122.36.123": {"hostname": "SYPQLIKSENSE07", "role": "[Qs_Prd] Scheduler 02"},
+    "10.122.36.124": {"hostname": "SYPQLIKSENSE08", "role": "[Qs_Prd] Scheduler 03"},
+    "10.122.36.220": {"hostname": "SYPQLIKSENSE17", "role": "[Qs_Prd] Scheduler 04"},
+    "10.122.36.111": {"hostname": "PEKWPQLIK05", "role": "[Qs_Dev] Central Master & Scheduler Master"},
+    "10.122.36.112": {"hostname": "PEKWPQLIK06", "role": "[Qs_Dev] Central Candidate & Scheduler 01"},
+    "10.122.36.114": {"hostname": "PEKWPQLIK01", "role": "[Qs_Dev] Proxy Engine 01"},
+    "10.122.36.115": {"hostname": "PEKWPQLIK03", "role": "[Qs_Dev] Proxy Engine 02"},
+    "10.122.36.116": {"hostname": "PEKWPQLIK04", "role": "[Qs_Dev] Proxy Engine 03"},
+    "10.122.36.128": {"hostname": "SYPQLIKSENSE09", "role": "[Qs_Dev] Scheduler 02"},
+    # 其他 IP 地址、主机名和对应的角色...
+}
+# 依次打印每个 IP 的信息
+for ip, host_role in ip_host_role.items():
+    print(f"Qlik Sense {ip} Qs_Services_StopsRunning")
+    print(f"IP Address: {ip}")
+    print(f"HostName: {host_role['hostname']}")
+    print(f"Role: {host_role['role']}")
+    print()

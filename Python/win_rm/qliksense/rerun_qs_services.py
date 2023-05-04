@@ -2,7 +2,7 @@
 Author       : Kui.Chen
 Date         : 2023-03-13 11:46:20
 LastEditors  : Kui.Chen
-LastEditTime : 2023-04-19 17:45:54
+LastEditTime : 2023-04-25 16:24:50
 FilePath     : \Scripts\Python\win_rm\qliksense\rerun_qs_services.py
 Description  : 批量重启 Qlik Sense 服务
 Copyright    : Copyright (c) 2023 by Kui.Chen, All Rights Reserved.
@@ -27,7 +27,7 @@ nodes = [
 # "10.122.36.106",	#	"SYPQLIKSENSE18"	[PRD] Proxy Engine 05"
 # "10.122.36.107",	#	"SYPQLIKSENSE11"	[PRD] Proxy Engine 01"
 # "10.122.36.108",	#	"SYPQLIKSENSE12"	[PRD] Proxy Engine 02"
-# "10.122.36.109",	#	"SYPQLIKSENSE13"	[PRD] Proxy Engine 03"
+"10.122.36.109",	#	"SYPQLIKSENSE13"	[PRD] Proxy Engine 03"
 # "10.122.36.110",	#	"SYPQLIKSENSE14"	[PRD] API 02"
 # "10.122.36.119",	#	"SYPQLIKSENSE03"	[PRD] API 01"
 # "10.122.36.120",	#	"SYPQLIKSENSE04"	[PRD] Central Master & Scheduler Master"
@@ -45,10 +45,11 @@ nodes = [
 # "10.122.27.37",   #   PEKWNQLIK07         [TST]
 # "10.122.27.38",   #   PEKWNQLIK08         [TST]
 # "10.122.27.39",   #   PEKWNQLIK09         [TST]
-"10.122.27.1",    #   WIN-G7IG3TRA8E4     [TST]
+# # "10.122.27.1",    #   WIN-G7IG3TRA8E4     [TST]
 # "10.122.27.3",    #   WIN-ICR6696ONF4     [TST]
 # "10.122.27.4",    #   SHEWNQLIKRE         [TST]
 # "10.122.27.5",    #   WIN-54U2N8LPHD0     [TST]
+# "10.122.27.223"   #   "SHEWNQUSC2"        [TST]
 ]
 
 ps1  = """

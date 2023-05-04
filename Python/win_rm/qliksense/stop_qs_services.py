@@ -2,7 +2,7 @@
 Author       : Kui.Chen
 Date         : 2023-03-13 11:46:20
 LastEditors  : Kui.Chen
-LastEditTime : 2023-04-19 17:40:08
+LastEditTime : 2023-04-21 14:32:04
 FilePath     : \Scripts\Python\win_rm\qliksense\stop_qs_services.py
 Description  : 批量重启 Qlik Sense 服务
 Copyright    : Copyright (c) 2023 by Kui.Chen, All Rights Reserved.
@@ -42,13 +42,14 @@ nodes = [
 # "10.122.36.115",	#	"PEKWPQLIK03"	    [DEV] Proxy Engine 02"
 # "10.122.36.116",	#	"PEKWPQLIK04"	    [DEV] Proxy Engine 03"
 # "10.122.36.128" 	#	"SYPQLIKSENSE09"	[DEV] Scheduler 02"
-# "10.122.27.37",   #   PEKWNQLIK07         [TST]
-# "10.122.27.38",   #   PEKWNQLIK08         [TST]
-# "10.122.27.39",   #   PEKWNQLIK09         [TST]
-# "10.122.27.1",    #   WIN-G7IG3TRA8E4     [TST]
-# "10.122.27.3",    #   WIN-ICR6696ONF4     [TST]
-# "10.122.27.4",    #   SHEWNQLIKRE         [TST]
-# "10.122.27.5",    #   WIN-54U2N8LPHD0     [TST]
+"10.122.27.37",   #   PEKWNQLIK07         [TST]
+"10.122.27.38",   #   PEKWNQLIK08         [TST]
+"10.122.27.39",   #   PEKWNQLIK09         [TST]
+"10.122.27.1",    #   WIN-G7IG3TRA8E4     [TST]
+"10.122.27.3",    #   WIN-ICR6696ONF4     [TST]
+"10.122.27.4",    #   SHEWNQLIKRE         [TST]
+"10.122.27.5",    #   WIN-54U2N8LPHD0     [TST]
+# "10.122.27.223"   #   "SHEWNQUSC2"        [TST]
 ]
 
 ps1  = """

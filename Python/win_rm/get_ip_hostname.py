@@ -3,7 +3,7 @@
 Author       : Kui.Chen
 Date         : 2023-03-13 11:46:20
 LastEditors  : Kui.Chen
-LastEditTime : 2023-04-19 14:40:37
+LastEditTime : 2023-04-24 15:26:43
 FilePath     : \Scripts\Python\win_rm\get_ip_hostname.py
 Description  : 批量获取IP对应的hostname
 Copyright    : Copyright (c) 2023 by Kui.Chen, All Rights Reserved.
@@ -25,14 +25,25 @@ def remote_server(remote_host, command):
 node = "10.122.27.39"
 ps1  = """
 
-$ipList = "10.122.27.37", "10.122.27.38", "10.122.27.39", "10.122.27.1", "10.122.27.2", "10.122.27.3", "10.122.27.4", "10.122.27.5"
+$ipList = "10.122.27.37", 
+    # "10.122.27.38", 
+    # "10.122.27.39", 
+    # "10.122.27.1", 
+    # "10.122.27.3", 
+    # "10.122.27.4", 
+    # "10.122.27.5",
+    # "10.122.27.222",
+    "10.122.27.223"
+
 
 foreach ($ip in $ipList) {
     if (Test-Connection -ComputerName $ip -Count 1 -Quiet) {
         $hostname = (Resolve-DnsName -Name $ip -ErrorAction SilentlyContinue | Select-Object -ExpandProperty NameHost)
-        Write-Host "$ip / $hostname" -ForegroundColor Green
+        Write-Host "$ip # $hostname,"
+        # Write-Host $("MAX(CASE WHEN machine_name = '$hostname' THEN status ELSE NULL END) AS '$ip',") 
+        
     } else {
-        Write-Host "$ip / Unreachable" -ForegroundColor Red
+        Write-Host "$ip # Unreachable"
     }
 }
 
