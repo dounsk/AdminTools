@@ -52,6 +52,19 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "Documentation/SQL/mysql.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b79eb8b12aa41052",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "Documentation/SQL/get windows services status.md",
                 "mode": "source",
                 "backlinks": false,
@@ -60,7 +73,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -190,27 +203,28 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "zk-prefixer:Create new unique note": false,
-      "random-note:Open random note": false
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "zk-prefixer:创建时间戳笔记": false,
+      "random-note:开始漫游笔记": false
     }
   },
-  "active": "e583bcc7c3f57e9f",
+  "active": "b79eb8b12aa41052",
   "lastOpenFiles": [
+    "Documentation/SQL/powershell connect to mysql.md",
+    "Documentation/SQL/mysql.md",
+    "Documentation/SQL/SQL 命令.md",
+    "Documentation/SQL/get windows services status.md",
     "Daily/2023-04-26_Wednesday.md",
     "Project/Lenovo/DataBase Password.md",
     "Project/Lenovo/CoData REST API.md",
-    "Documentation/SQL/mysql.md",
     "Project/Grafana/monitor.qliksense.lenovo.com.md",
     "Attached/defaults.ini",
     "Project/Grafana",
-    "Documentation/SQL/get windows services status.md",
-    "Documentation/SQL/SQL 命令.md",
     "Notes/Obsidian支持的格式.md",
     "Documentation/Knowledge/在 Windows 服务器上部署 Grafana 的步骤.md",
     "Documentation/Knowledge/运维自动化.md",
@@ -230,7 +244,6 @@
     "Project/Lenovo/服务器上的硬盘类型、RAID和RAID控制器.md",
     "Documentation/Python/datetimes.md",
     "Documentation/HTML/http 状态码详解.md",
-    "Documentation/Python/csv.md",
     "Attached/Pasted image 20230331154814.png",
     "Documentation/Knowledge",
     "Attached/Pasted image 20230316110237.png",
