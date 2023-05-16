@@ -2,7 +2,7 @@
 Author       : Kui.Chen
 Date         : 2023-03-13 11:46:20
 LastEditors  : Kui.Chen
-LastEditTime : 2023-03-13 14:45:10
+LastEditTime : 2023-05-09 16:58:42
 FilePath     : \Scripts\Python\win_rm\md_win_host.py
 Description  : 循环修改Windows host名单
 Copyright    : Copyright (c) 2023 by Kui.Chen, All Rights Reserved.
@@ -34,17 +34,26 @@ nodes = [
 # "10.122.36.110",	#	"SYPQLIKSENSE14"	[PRD] API 02"
 # "10.122.36.119",	#	"SYPQLIKSENSE03"	[PRD] API 01"
 # "10.122.36.120",	#	"SYPQLIKSENSE04"	[PRD] Central Master & Scheduler Master"
-"10.122.36.121",	#	"SYPQLIKSENSE05"	[PRD] Scheduler 05"
-"10.122.36.122",	#	"SYPQLIKSENSE06"	[PRD] Central Candidate & Scheduler 01"
-"10.122.36.123",	#	"SYPQLIKSENSE07"	[PRD] Scheduler 02"
-"10.122.36.124",	#	"SYPQLIKSENSE08"	[PRD] Scheduler 03"
-"10.122.36.220",	#	"SYPQLIKSENSE17"	[PRD] Scheduler 04"
-"10.122.36.111",	#	"PEKWPQLIK05"	    [DEV] Central Master & Scheduler Master"
-"10.122.36.112",	#	"PEKWPQLIK06"	    [DEV] Central Candidate & Scheduler 01"
-"10.122.36.114",	#	"PEKWPQLIK01"	    [DEV] Proxy Engine 01"
-"10.122.36.115",	#	"PEKWPQLIK03"	    [DEV] Proxy Engine 02"
-"10.122.36.116",	#	"PEKWPQLIK04"	    [DEV] Proxy Engine 03"
-"10.122.36.128" 	#	"SYPQLIKSENSE09"	[DEV] Scheduler 02"
+# "10.122.36.121",	#	"SYPQLIKSENSE05"	[PRD] Scheduler 05"
+# "10.122.36.122",	#	"SYPQLIKSENSE06"	[PRD] Central Candidate & Scheduler 01"
+# "10.122.36.123",	#	"SYPQLIKSENSE07"	[PRD] Scheduler 02"
+# "10.122.36.124",	#	"SYPQLIKSENSE08"	[PRD] Scheduler 03"
+# "10.122.36.220",	#	"SYPQLIKSENSE17"	[PRD] Scheduler 04"
+# "10.122.36.130",	#	"SYPQLIKSENSE19"	[PRD] SenseNP"
+# "10.122.36.111",	#	"PEKWPQLIK05"	    [DEV] Central Master & Scheduler Master"
+# "10.122.36.112",	#	"PEKWPQLIK06"	    [DEV] Central Candidate & Scheduler 01"
+# "10.122.36.114",	#	"PEKWPQLIK01"	    [DEV] Proxy Engine 01"
+# "10.122.36.115",	#	"PEKWPQLIK03"	    [DEV] Proxy Engine 02"
+# "10.122.36.116",	#	"PEKWPQLIK04"	    [DEV] Proxy Engine 03"
+# "10.122.36.128", 	#	"SYPQLIKSENSE09"	[DEV] Scheduler 02"
+# "10.122.27.37",   #   PEKWNQLIK07         [TST]
+# "10.122.27.38",   #   PEKWNQLIK08         [TST]
+# "10.122.27.39",   #   PEKWNQLIK09         [TST]
+# "10.122.27.1",    #   WIN-G7IG3TRA8E4     [TST]
+# "10.122.27.3",    #   WIN-ICR6696ONF4     [TST]
+# "10.122.27.4",    #   SHEWNQLIKRE         [TST]
+# "10.122.27.5",    #   WIN-54U2N8LPHD0     [TST]
+# "10.122.27.223",   #   "SHEWNQUSC2"        [TST]
 ]
 ps1  = """
 $hostFile = "C:\Windows\System32\drivers\etc\hosts"

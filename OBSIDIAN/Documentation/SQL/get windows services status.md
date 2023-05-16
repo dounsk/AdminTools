@@ -1,4 +1,4 @@
-
+#sql
 ```mysql
 -- Mysql 建表语句
 CREATE TABLE `qs_service_status` (

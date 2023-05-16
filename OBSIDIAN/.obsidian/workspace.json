@@ -8,72 +8,19 @@
         "type": "tabs",
         "children": [
           {
-            "id": "500932a8e48a7658",
+            "id": "9379cbd987189e3f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Documentation/SQL/SQL 命令.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "662977f39b0cc157",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Documentation/SQL/mysql.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "173c911e34703bec",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Documentation/SQL/get windows services status.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e583bcc7c3f57e9f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Documentation/SQL/mysql.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "b79eb8b12aa41052",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Documentation/SQL/get windows services status.md",
+                "file": "Daily/2023-05-10_星期三 Monthly Operation Review.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "vertical"
@@ -102,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#MonthlyReview",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -118,8 +65,17 @@
               "type": "starred",
               "state": {}
             }
+          },
+          {
+            "id": "686938759f05af9c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -150,7 +106,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Documentation/SQL/get windows services status.md"
+                "file": "Daily/2023-05-10_星期三 Monthly Operation Review.md"
               }
             }
           },
@@ -176,7 +132,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Documentation/SQL/get windows services status.md",
+                "file": "Daily/2023-05-10_星期三 Monthly Operation Review.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -213,37 +169,39 @@
       "random-note:开始漫游笔记": false
     }
   },
-  "active": "b79eb8b12aa41052",
+  "active": "9379cbd987189e3f",
   "lastOpenFiles": [
-    "Documentation/SQL/powershell connect to mysql.md",
-    "Documentation/SQL/mysql.md",
-    "Documentation/SQL/SQL 命令.md",
-    "Documentation/SQL/get windows services status.md",
-    "Daily/2023-04-26_Wednesday.md",
-    "Project/Lenovo/DataBase Password.md",
-    "Project/Lenovo/CoData REST API.md",
-    "Project/Grafana/monitor.qliksense.lenovo.com.md",
-    "Attached/defaults.ini",
-    "Project/Grafana",
-    "Notes/Obsidian支持的格式.md",
-    "Documentation/Knowledge/在 Windows 服务器上部署 Grafana 的步骤.md",
-    "Documentation/Knowledge/运维自动化.md",
+    "Daily/2023-05-12_星期五.md",
     "Daily/2023-04-21_星期五.md",
+    "Daily/2023-03-30_星期四.md",
+    "Daily/2023-03-16_星期四.md",
+    "Daily/2023-03-09 周四.md",
+    "Notes/tips.md",
+    "Daily/2023-05-10_星期三 Monthly Operation Review.md",
+    "Documentation/Knowledge/运维自动化.md",
+    "Documentation/HTML/HTML 格式.md",
+    "Documentation/SQL/SQL 命令.md",
+    "Notes/Obsidian支持的格式.md",
     "Documentation/Windows/PowerShell 常用命令.md",
     "Documentation/Windows/bat.md",
     "Documentation/Windows/获取Windows 环境路径.md",
     "Documentation/Windows/常用的Windows命令.md",
-    "Notes/tips.md",
-    "CANVAS/白板 🎨.canvas",
-    "Daily/2023-03-30_星期四.md",
-    "Daily/2023-04-17_星期一.md",
-    "Daily/2023-03-09 周四.md",
+    "Documentation/SQL/powershell connect to mysql.md",
+    "Documentation/SQL/mysql.md",
+    "Documentation/SQL/get windows services status.md",
     "Documentation/Python/print (color_code).md",
-    "Daily/2023-04-04_星期二.md",
-    "Documentation/2023 AI 工具合集文档.md",
-    "Project/Lenovo/服务器上的硬盘类型、RAID和RAID控制器.md",
+    "Documentation/Python/pip.md",
     "Documentation/Python/datetimes.md",
+    "Documentation/Python/csv.md",
+    "Documentation/Python/在远程和本地执行 Ps1.md",
+    "Documentation/PowerBI/Dax.md",
+    "Documentation/Knowledge/在 Windows 服务器上部署 Grafana 的步骤.md",
     "Documentation/HTML/http 状态码详解.md",
+    "CANVAS/未命名.canvas",
+    "Documentation/PowerBI",
+    "Attached/defaults.ini",
+    "Project/Grafana",
+    "CANVAS/白板 🎨.canvas",
     "Attached/Pasted image 20230331154814.png",
     "Documentation/Knowledge",
     "Attached/Pasted image 20230316110237.png",
@@ -256,7 +214,6 @@
     "Attached/PS_ISE.bat",
     "Attached/Pasted image 20230210114444.png",
     "Attached/Pasted image 20230210114943.png",
-    "CANVAS/未命名.canvas",
     "Project/Lenovo",
     "Project/Qlik_Sense/HowTo",
     "未命名.canvas"

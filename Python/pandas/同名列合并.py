@@ -1,3 +1,5 @@
+# 将 Excel 中 ProjectName 列相同的对应的 Owner 合并为一列
+
 import pandas as pd
 # 读取 Excel 文件
 df = pd.read_excel('pm.xlsx')

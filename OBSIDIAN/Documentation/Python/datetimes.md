@@ -1,3 +1,5 @@
+#python 
+
 `TypeError: can't subtract offset-naive and offset-aware datetimes`
 
 这个错误通常是由于在没有时区信息的`datetime`对象和带有时区信息的`datetime`对象之间执行减法运算引起的。在Python中，`datetime`对象可以是有时区信息的（称为“offset-aware”）或没有时区信息的（称为“offset-naive”）。如果您尝试将这两种类型的对象相减，就会触发这个错误。 要解决这个错误，您需要确保两个`datetime`对象的时区信息相同。您可以使用`pytz`模块来处理时区信息。这个模块提供了一个`timezone`类，可以用来表示各种时区。以下是一个简单的示例，演示如何使用`pytz`模块将一个`datetime`对象转换为带有时区信息的对象：
