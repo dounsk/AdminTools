@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Daily/2023-05-10_星期三 Monthly Operation Review.md",
+                "file": "Documentation/Docker/未命名.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -74,8 +74,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -106,7 +105,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Daily/2023-05-10_星期三 Monthly Operation Review.md"
+                "file": "Documentation/Docker/未命名.md"
               }
             }
           },
@@ -132,7 +131,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Daily/2023-05-10_星期三 Monthly Operation Review.md",
+                "file": "Documentation/Docker/未命名.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -169,26 +168,28 @@
       "random-note:开始漫游笔记": false
     }
   },
-  "active": "9379cbd987189e3f",
+  "active": "87ba0b5448e6defd",
   "lastOpenFiles": [
+    "Documentation/SQL/powershell connect to mysql.md",
+    "Documentation/Docker/未命名.md",
+    "Documentation/Docker",
+    "Documentation/SQL/SQL 命令.md",
+    "Documentation/SQL/get windows services status.md",
+    "Daily/2023-05-10_星期三 Monthly Operation Review.md",
     "Daily/2023-05-12_星期五.md",
     "Daily/2023-04-21_星期五.md",
     "Daily/2023-03-30_星期四.md",
     "Daily/2023-03-16_星期四.md",
     "Daily/2023-03-09 周四.md",
     "Notes/tips.md",
-    "Daily/2023-05-10_星期三 Monthly Operation Review.md",
     "Documentation/Knowledge/运维自动化.md",
     "Documentation/HTML/HTML 格式.md",
-    "Documentation/SQL/SQL 命令.md",
     "Notes/Obsidian支持的格式.md",
     "Documentation/Windows/PowerShell 常用命令.md",
     "Documentation/Windows/bat.md",
     "Documentation/Windows/获取Windows 环境路径.md",
     "Documentation/Windows/常用的Windows命令.md",
-    "Documentation/SQL/powershell connect to mysql.md",
     "Documentation/SQL/mysql.md",
-    "Documentation/SQL/get windows services status.md",
     "Documentation/Python/print (color_code).md",
     "Documentation/Python/pip.md",
     "Documentation/Python/datetimes.md",
@@ -196,7 +197,6 @@
     "Documentation/Python/在远程和本地执行 Ps1.md",
     "Documentation/PowerBI/Dax.md",
     "Documentation/Knowledge/在 Windows 服务器上部署 Grafana 的步骤.md",
-    "Documentation/HTML/http 状态码详解.md",
     "CANVAS/未命名.canvas",
     "Documentation/PowerBI",
     "Attached/defaults.ini",
@@ -215,7 +215,6 @@
     "Attached/Pasted image 20230210114444.png",
     "Attached/Pasted image 20230210114943.png",
     "Project/Lenovo",
-    "Project/Qlik_Sense/HowTo",
     "未命名.canvas"
   ]
 }
