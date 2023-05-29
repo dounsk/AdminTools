@@ -2,7 +2,7 @@
 Author       : Kui.Chen
 Date         : 2023-01-13 16:31:35
 LastEditors  : Kui.Chen
-LastEditTime : 2023-03-31 09:47:47
+LastEditTime : 2023-05-25 10:49:08
 FilePath     : \Scripts\Python\ScheduledTasks\Task_triggers.pyw
 Description  : Schedule task triggers
 Copyright    : Copyright (c) 2023 by Kui.Chen, All Rights Reserved.
@@ -28,21 +28,21 @@ tasks = {
         "interval": "hourly at 10 minutes past the hour",
         "script": r"script2.py"
     },
-    "daily_Qs_task_performance": {
+    "daily_zhihu": {
     # qliksense task scheduler load performance
         "enabled": True,
-        "interval": "daily at 23:58",
-        "script": r"D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\Qs_task_performance.pyw"
+        "interval": "daily at 10:58",
+        "script": r"D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\daily_zhihu.pyw"
     },
     "weekly_Wed_keepalive": {
     # admin keep alive
-        "enabled": True,
+        "enabled": False,
         "interval": "every Wednesday at 17:00",
         "script": r"D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\keepalive.pyw"
     },
     "weekly_Fri_dms": {
     # dead man's switch
-        "enabled": True,
+        "enabled": False,
         "interval": "every Friday at 17:00",
         "script": r"D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\dms.py"
     }
@@ -54,7 +54,7 @@ def job(task):
     with open(log, "a") as f:
         f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}] Job {task} started, running script {script_name}.\n")
     try:
-        subprocess.run(["C:\\Python\\python.exe", script_name], check=True)
+        subprocess.run(["C:\Python\python.exe", script_name], check=True)
     except subprocess.CalledProcessError as e:
         error_msg = str(e)
         print(f"[{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}] Job {task} failed with error: {error_msg}")

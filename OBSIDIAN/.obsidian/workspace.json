@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Documentation/Docker/未命名.md",
+                "file": "Daily/2023-03-10_星期五.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -49,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#MonthlyReview",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "f324f802825d310f",
@@ -105,7 +105,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Documentation/Docker/未命名.md"
+                "file": "Daily/2023-03-10_星期五.md"
               }
             }
           },
@@ -131,7 +131,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Documentation/Docker/未命名.md",
+                "file": "Daily/2023-03-10_星期五.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -154,24 +154,53 @@
       }
     ],
     "direction": "horizontal",
-    "width": 320.5
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:打开快速切换": false,
-      "graph:查看关系图谱": false,
-      "canvas:新建白板": false,
-      "daily-notes:打开/创建今天的日记": false,
-      "templates:插入模板": false,
-      "command-palette:打开命令面板": false,
-      "zk-prefixer:创建时间戳笔记": false,
-      "random-note:开始漫游笔记": false
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "zk-prefixer:Create new unique note": false,
+      "random-note:Open random note": false
     }
   },
-  "active": "87ba0b5448e6defd",
+  "active": "9379cbd987189e3f",
   "lastOpenFiles": [
+    "Project/Grafana/monitor.qliksense.lenovo.com.md",
+    "Daily/2023-03-16_星期四.md",
+    "Daily/2023-03-09 周四.md",
+    "Attached/Pasted image 20230210114943.png",
+    "Documentation/Python/csv.md",
+    "CANVAS/未命名.canvas",
+    "CANVAS/白板 🎨.canvas",
+    "Documentation/Python/在远程和本地执行 Ps1.md",
+    "Documentation/Python/Pandas.md",
+    "Documentation/Python/pyinstrument.md",
+    "Documentation/Python/print (color_code).md",
+    "Documentation/Python/pip.md",
+    "Project/PowerBI/TCV-Tracker-IaaS/Rules.md",
+    "Project/PowerBI/TCV-Tracker-IaaS/IT Architecture​.md",
+    "Project/PowerBI/TCV-Tracker-IaaS/TCV MCV for Power Compute TruScale IaaS.md",
+    "Documentation/2023 AI 工具合集文档.md",
+    "Project/PowerBI/TCV-Tracker-IaaS/Data Modeling​.md",
+    "Attached/Pasted image 20230518151158.png",
+    "Attached/Pasted image 20230518151139.png",
+    "Attached/Pasted image 20230518150917.png",
+    "Attached/Pasted image 20230518150858.png",
+    "Attached/Pasted image 20230518150808.png",
+    "Project/PowerBI/TCV-Tracker-IaaS",
+    "Project/未命名.md",
+    "Project/PowerBI",
+    "Documentation/Docker/docker command.md",
+    "Documentation/Docker/管理容器.md",
+    "Documentation/Docker/Ubuntu.md",
+    "Documentation/Linux/Ubuntu.md",
+    "Documentation/Linux",
     "Documentation/SQL/powershell connect to mysql.md",
-    "Documentation/Docker/未命名.md",
     "Documentation/Docker",
     "Documentation/SQL/SQL 命令.md",
     "Documentation/SQL/get windows services status.md",
@@ -179,29 +208,9 @@
     "Daily/2023-05-12_星期五.md",
     "Daily/2023-04-21_星期五.md",
     "Daily/2023-03-30_星期四.md",
-    "Daily/2023-03-16_星期四.md",
-    "Daily/2023-03-09 周四.md",
-    "Notes/tips.md",
-    "Documentation/Knowledge/运维自动化.md",
-    "Documentation/HTML/HTML 格式.md",
-    "Notes/Obsidian支持的格式.md",
-    "Documentation/Windows/PowerShell 常用命令.md",
-    "Documentation/Windows/bat.md",
-    "Documentation/Windows/获取Windows 环境路径.md",
-    "Documentation/Windows/常用的Windows命令.md",
-    "Documentation/SQL/mysql.md",
-    "Documentation/Python/print (color_code).md",
-    "Documentation/Python/pip.md",
-    "Documentation/Python/datetimes.md",
-    "Documentation/Python/csv.md",
-    "Documentation/Python/在远程和本地执行 Ps1.md",
-    "Documentation/PowerBI/Dax.md",
-    "Documentation/Knowledge/在 Windows 服务器上部署 Grafana 的步骤.md",
-    "CANVAS/未命名.canvas",
     "Documentation/PowerBI",
     "Attached/defaults.ini",
     "Project/Grafana",
-    "CANVAS/白板 🎨.canvas",
     "Attached/Pasted image 20230331154814.png",
     "Documentation/Knowledge",
     "Attached/Pasted image 20230316110237.png",
@@ -209,12 +218,6 @@
     "Documentation/SQL",
     "Attached/Pasted image 20230310161501.png",
     "Attached/Pasted image 20230310161455.png",
-    "Attached/Pasted image 20230310161452.png",
-    "Attached/PS_ISE 1.bat",
-    "Attached/PS_ISE.bat",
-    "Attached/Pasted image 20230210114444.png",
-    "Attached/Pasted image 20230210114943.png",
-    "Project/Lenovo",
     "未命名.canvas"
   ]
 }

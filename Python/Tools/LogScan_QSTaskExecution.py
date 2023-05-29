@@ -1,24 +1,18 @@
 '''
-Author: Kui.Chen
-Date: 2023-02-23 17:17:35
-LastEditors: Kui.Chen
-LastEditTime: 2023-02-28 10:58:35
-FilePath: \Scripts\Python\Tools\LogScan_QSTaskExecution.py
-Description: Log Scan Duration of QS Task Execution
-👇    For example
-| App ID     | Total Rows | Execution Started Time | Execution Finished Time | Interval | Execution Results | Connection Name       |
-|------------|------------|------------------------|-------------------------|----------|-------------------|-----------------------|
-| 71b9ef79*  | 46362664   |    2023/2/19 13:54     | 2023/2/19 14:37         |          |Search index *     | ["'Upsell_IBase *'\n"]|
-
-Copyright: Copyright (c) 2023 by Kui.Chen, All Rights Reserved.
+Author       : Kui.Chen
+Date         : 2023-02-23 17:17:35
+LastEditors  : Kui.Chen
+LastEditTime : 2023-05-22 10:33:21
+FilePath     : \Scripts\Python\Tools\LogScan_QSTaskExecution.py
+Description  : 
+Copyright    : Copyright (c) 2023 by Kui.Chen, All Rights Reserved.
 '''
-
 import os
 import csv
 import time
 from datetime import datetime, timedelta
 
-app_id = "8d8c1658-acb5-4ae2-bfb5-e1131d1068d0"
+app_id = "17e4338c-70f8-48eb-b816-dd9c839a85a6"
 export_directory = 'C://Users//douns//Downloads//'
 
 # 格式化时间

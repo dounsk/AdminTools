@@ -2,8 +2,8 @@
 Author       : Kui.Chen
 Date         : 2023-01-10 16:09:39
 LastEditors  : Kui.Chen
-LastEditTime : 2023-03-06 14:23:30
-FilePath     : \Scripts\Python\ScheduledTasks\daily_zhihu.pyw
+LastEditTime : 2023-05-17 10:25:32
+FilePath     : \Scripts\Python\ScheduledTasks\tasks\daily_zhihu.pyw
 Description  : 
 Copyright    : Copyright (c) 2023 by Kui.Chen, All Rights Reserved.
 '''
@@ -25,7 +25,8 @@ mail_set = {
     "sender": "noreply@8088.onmicrosoft.com",
     "receivers": [
                   'dounsk@outlook.com',
-                 ],}
+                 ],
+    }
 
 class SendMail(object):
     @staticmethod
@@ -38,7 +39,7 @@ class SendMail(object):
 
     def get_content(self):
         message = self.get_message()
-        content = MIMEText(MailContent, 'html', 'utf-8')
+        content = MIMEText(mail_content, 'html', 'utf-8')
         message.attach(content)
         return message
 
@@ -83,7 +84,15 @@ for i in rjson['stories']:
                     headers={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36'})
     resp.encoding='utf-8'
     soup = bs4.BeautifulSoup(resp.text, 'lxml')
-    MailContent = soup.find(class_ = 'content')
+    # MailContent = soup.find(class_ = 'content')
+    content = soup.find(class_='content')
+    # 优化邮件内容，指定为90%宽度显示
+    mail_content = ''
+    width = '90%'
+    content_width = '<div style="width: '+width+'; margin: 0 auto;">' + \
+        content.prettify()+'</div>'
+    mail_content += '<table align="Center" width="95%" border="0"><tr><td><h3><a href="' + \
+        url+'">'+title+'</a></h3>'+content_width+'</td></tr></table>'
     # 发送邮件
     app = SendMail()
     app.run()
