@@ -2,7 +2,7 @@
 Author       : Kui.Chen
 Date         : 2023-03-13 11:46:20
 LastEditors  : Kui.Chen
-LastEditTime : 2023-05-09 11:39:24
+LastEditTime : 2023-07-15 09:37:28
 FilePath     : \Scripts\Python\win_rm\qliksense\rerun_qs_services.py
 Description  : 多线程批量重启 Qlik Sense 服务
 Copyright    : Copyright (c) 2023 by Kui.Chen, All Rights Reserved.
@@ -12,16 +12,31 @@ import winrm
 import datetime
 import threading
 
+# def remote_server(remote_host, command): 
+#     remote_username = 'tableau'
+#     remote_password = 'wixj-2342'
+#     session         = winrm.Session('http://'+remote_host+':5985/wsman', 
+#                             auth                   = (remote_username, remote_password),
+#                             transport              = 'ntlm',
+#                             server_cert_validation = 'ignore')
+#     result = session.run_ps(command) 
+#     print (result.std_out.decode("utf-8"))
+#     print("\033[33m {}\033[00m".format(f"------ Rerun Command execution completed on {remote_host} ------" ))
+
+
 def remote_server(remote_host, command): 
     remote_username = 'tableau'
     remote_password = 'wixj-2342'
     session         = winrm.Session('http://'+remote_host+':5985/wsman', 
-                            auth                   = (remote_username, remote_password),
-                            transport              = 'ntlm',
-                            server_cert_validation = 'ignore')
+        auth                   = (remote_username, remote_password),
+        transport              = 'ntlm',
+        server_cert_validation = 'ignore')
+    # CMD
+    # result = session.run_cmd(command) 
+    # Powershell
     result = session.run_ps(command) 
-    print (result.std_out.decode("utf-8"))
-    print("\033[33m {}\033[00m".format(f"------ Rerun Command execution completed on {remote_host} ------" ))
+    print (result.std_out.decode())
+    # return result.std_out.decode()
 
 nodes = [
 ## IP Address 		    HostName	        Role
@@ -38,7 +53,7 @@ nodes = [
 # "10.122.36.123",	#	"SYPQLIKSENSE07"	[PRD] Scheduler 02"
 # "10.122.36.124",	#	"SYPQLIKSENSE08"	[PRD] Scheduler 03"
 # "10.122.36.220",	#	"SYPQLIKSENSE17"	[PRD] Scheduler 04"
-"10.122.36.130",	#	"SYPQLIKSENSE19"	[PRD] SenseNP"
+# "10.122.36.130",	#	"SYPQLIKSENSE19"	[PRD] SenseNP"
 # "10.122.36.111",	#	"PEKWPQLIK05"	    [DEV] Central Master & Scheduler Master"
 # "10.122.36.112",	#	"PEKWPQLIK06"	    [DEV] Central Candidate & Scheduler 01"
 # "10.122.36.114",	#	"PEKWPQLIK01"	    [DEV] Proxy Engine 01"
@@ -47,7 +62,7 @@ nodes = [
 # "10.122.36.128", 	#	"SYPQLIKSENSE09"	[DEV] Scheduler 02"
 # "10.122.27.37",   #   PEKWNQLIK07         [TST]
 # "10.122.27.38",   #   PEKWNQLIK08         [TST]
-# "10.122.27.39",   #   PEKWNQLIK09         [TST]
+"10.122.27.39",   #   PEKWNQLIK09         [TST]
 # "10.122.27.1",    #   WIN-G7IG3TRA8E4     [TST]
 # "10.122.27.3",    #   WIN-ICR6696ONF4     [TST]
 # "10.122.27.4",    #   SHEWNQLIKRE         [TST]
@@ -56,38 +71,9 @@ nodes = [
 ]
 
 ps1  = """
-# 以管理员权限运行
-If (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator"))
-{
-    $arguments = "& '" + $myinvocation.mycommand.definition + "'"
-    Start-Process powershell -Verb runAs -ArgumentList $arguments
-    Break
-}
+
 # 服务重启告警
 Write-Warning "$(Get-Date -Format '[yyyy-MM-dd HH:mm:ss]') Qlik Sense Services Rerun on: $env:COMPUTERNAME"
-
-# 检查并停止 QS 服务运行
-$services = @("Zabbix*","QlikSenseEngineService","QlikSensePrintingService", "QlikSenseProxyService","QlikSenseSchedulerService","QlikSenseServiceDispatcher","QlikSenseRepositoryService")
-foreach ($service in $services)
-{
-    $serviceStatus = Get-Service -Name $service | Where-Object {$_.StartType -ne "Disabled"} -ErrorAction SilentlyContinue 
-    if ($null -ne $serviceStatus)
-    {
-        if ($serviceStatus.Status -eq "Running")
-        {
-            # Write-Host "Stop-Service $service"
-            Stop-Service -Name $service -Force
-        }
-        else
-        {
-            # Write-Host "Service $service is not running"
-        }
-    }
-    else
-    {
-        # Write-Host "Service $service does not exist"
-    }
-}
 
 # 检查并停止 QS 服务运行
 $services = @("Zabbix*","QlikSenseEngineService","QlikSensePrintingService", "QlikSenseProxyService","QlikSenseSchedulerService","QlikSenseServiceDispatcher","QlikSenseRepositoryService")

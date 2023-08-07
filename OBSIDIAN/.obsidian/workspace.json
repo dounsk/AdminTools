@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "2045b569680ae258",
+        "id": "1046e1bd87fef104",
         "type": "tabs",
         "children": [
           {
-            "id": "9379cbd987189e3f",
+            "id": "a4e9abfe9bbe099c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Daily/2023-03-10_星期五.md",
+                "file": "Documentation/Knowledge/运维工具.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 280.5
   },
   "right": {
     "id": "f324f802825d310f",
@@ -105,24 +105,8 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Daily/2023-03-10_星期五.md"
+                "file": "Documentation/Knowledge/运维工具.md"
               }
-            }
-          },
-          {
-            "id": "ccbd02638514ab29",
-            "type": "leaf",
-            "state": {
-              "type": "calendar",
-              "state": {}
-            }
-          },
-          {
-            "id": "9ea7d5ede66cc751",
-            "type": "leaf",
-            "state": {
-              "type": "todo",
-              "state": {}
             }
           },
           {
@@ -131,7 +115,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Daily/2023-03-10_星期五.md",
+                "file": "Documentation/Knowledge/运维工具.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -149,8 +133,25 @@
               "type": "advanced-tables-toolbar",
               "state": {}
             }
+          },
+          {
+            "id": "96d50a30c6cdf1b4",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "9fdbaf8fb999e63f",
+            "type": "leaf",
+            "state": {
+              "type": "todo",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -168,46 +169,48 @@
       "random-note:Open random note": false
     }
   },
-  "active": "9379cbd987189e3f",
+  "active": "a4e9abfe9bbe099c",
   "lastOpenFiles": [
+    "Documentation/Knowledge/运维自动化.md",
+    "Documentation/Knowledge/运维工具.md",
+    "Project/PowerBI/TCV-Tracker-IaaS/magellan-edw-synapse.md",
+    "Project/PowerBI/TCV-Tracker-IaaS/Fields that are not available now.md",
+    "Project/PowerBI/TCV-Tracker-IaaS/Data Modeling​.md",
+    "Project/Lenovo/DataBase Password.md",
+    "Project/Lenovo/服务器上的硬盘类型、RAID和RAID控制器.md",
+    "Project/Qlik_Sense/Vizlib Version.md",
+    "Project/Qlik_Sense/Section Access.md",
+    "Project/PowerBI/TCV-Tracker-IaaS/Rules.md",
+    "Project/PowerBI/TCV-Tracker-IaaS/TCV MCV for Power Compute TruScale IaaS.md",
+    "Project/Qlik_Sense/Client Authentication URL.md",
+    "Project/PowerBI/TCV-Tracker-IaaS/IT Architecture​.md",
+    "Documentation/Linux/Debian.md",
+    "Project/Qlik_Sense/使用qliksense 进行数据报表开发.md",
+    "Documentation/Linux/Ubuntu.md",
+    "Notes/Obsidian支持的格式.md",
     "Project/Grafana/monitor.qliksense.lenovo.com.md",
+    "Daily/2023-05-12_星期五.md",
+    "Documentation/Docker/管理容器.md",
+    "Documentation/HTML/HTML 格式.md",
+    "Attached/Pasted image 20230602143038.png",
+    "Documentation/HTML/http 状态码详解.md",
+    "Attached/Pasted image 20230210114444.png",
+    "Daily/2023-03-10_星期五.md",
     "Daily/2023-03-16_星期四.md",
     "Daily/2023-03-09 周四.md",
     "Attached/Pasted image 20230210114943.png",
     "Documentation/Python/csv.md",
     "CANVAS/未命名.canvas",
     "CANVAS/白板 🎨.canvas",
-    "Documentation/Python/在远程和本地执行 Ps1.md",
-    "Documentation/Python/Pandas.md",
-    "Documentation/Python/pyinstrument.md",
-    "Documentation/Python/print (color_code).md",
-    "Documentation/Python/pip.md",
-    "Project/PowerBI/TCV-Tracker-IaaS/Rules.md",
-    "Project/PowerBI/TCV-Tracker-IaaS/IT Architecture​.md",
-    "Project/PowerBI/TCV-Tracker-IaaS/TCV MCV for Power Compute TruScale IaaS.md",
-    "Documentation/2023 AI 工具合集文档.md",
-    "Project/PowerBI/TCV-Tracker-IaaS/Data Modeling​.md",
     "Attached/Pasted image 20230518151158.png",
     "Attached/Pasted image 20230518151139.png",
     "Attached/Pasted image 20230518150917.png",
     "Attached/Pasted image 20230518150858.png",
     "Attached/Pasted image 20230518150808.png",
     "Project/PowerBI/TCV-Tracker-IaaS",
-    "Project/未命名.md",
     "Project/PowerBI",
-    "Documentation/Docker/docker command.md",
-    "Documentation/Docker/管理容器.md",
-    "Documentation/Docker/Ubuntu.md",
-    "Documentation/Linux/Ubuntu.md",
     "Documentation/Linux",
-    "Documentation/SQL/powershell connect to mysql.md",
     "Documentation/Docker",
-    "Documentation/SQL/SQL 命令.md",
-    "Documentation/SQL/get windows services status.md",
-    "Daily/2023-05-10_星期三 Monthly Operation Review.md",
-    "Daily/2023-05-12_星期五.md",
-    "Daily/2023-04-21_星期五.md",
-    "Daily/2023-03-30_星期四.md",
     "Documentation/PowerBI",
     "Attached/defaults.ini",
     "Project/Grafana",
@@ -216,8 +219,6 @@
     "Attached/Pasted image 20230316110237.png",
     "Documentation/HTML",
     "Documentation/SQL",
-    "Attached/Pasted image 20230310161501.png",
-    "Attached/Pasted image 20230310161455.png",
     "未命名.canvas"
   ]
 }

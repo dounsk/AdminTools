@@ -24,7 +24,8 @@ mail_set = {
     "pwd": 'KFCrazy4V50ToMe',
     "sender": "noreply@8088.onmicrosoft.com",
     "receivers": [
-                  'dounsk@outlook.com',
+                #   'dounsk@outlook.com',
+                'Tom@8088.onmicrosoft.com',
                  ],
     }
 

@@ -2,7 +2,7 @@
 Author       : Kui.Chen
 Date         : 2022-10-19 16:56:14
 LastEditors  : Kui.Chen
-LastEditTime : 2023-04-25 15:12:43
+LastEditTime : 2023-07-31 16:42:00
 FilePath     : \Scripts\Python\DataBase\mysql_Createtable.py
 Description  : update to mysql
 Copyright    : Copyright (c) 2023 by Kui.Chen, All Rights Reserved.
@@ -44,6 +44,9 @@ def implement(sql):
     db.close()
 
 sql  = """
+
+# CREATE DATABASE finedb;
+# SHOW DATABASES;
 
 # 建表语句：
 # CREATE TABLE IF NOT EXISTS `qs_platform_usage`(
@@ -114,13 +117,13 @@ sql  = """
 
 # INSERT INTO qs_platform_usage ( date, users_total, users_lenovoad, streams_count, apps_count, reload_tasks_count) VALUES ( CURDATE(), '23814', '19311', '330', '3352', '3969');
 
-INSERT INTO qs_service_status (machine_name, service_name, status, update_time) VALUES ('SYPQLIKSENSE15', 'QlikLoggingService', 0, NOW());
-INSERT INTO qs_service_status (machine_name, service_name, status, update_time) VALUES ('SYPQLIKSENSE15', 'QlikSenseEngineService', 2, NOW());
-INSERT INTO qs_service_status (machine_name, service_name, status, update_time) VALUES ('SYPQLIKSENSE15', 'QlikSensePrintingService', 0, NOW());
-INSERT INTO qs_service_status (machine_name, service_name, status, update_time) VALUES ('SYPQLIKSENSE15', 'QlikSenseProxyService', 2, NOW());
-INSERT INTO qs_service_status (machine_name, service_name, status, update_time) VALUES ('SYPQLIKSENSE15', 'QlikSenseRepositoryService', 2, NOW());
-INSERT INTO qs_service_status (machine_name, service_name, status, update_time) VALUES ('SYPQLIKSENSE15', 'QlikSenseSchedulerService', 0, NOW());
-INSERT INTO qs_service_status (machine_name, service_name, status, update_time) VALUES ('SYPQLIKSENSE15', 'QlikSenseServiceDispatcher', 2, NOW());
+# INSERT INTO qs_service_status (machine_name, service_name, status, update_time) VALUES ('SYPQLIKSENSE15', 'QlikLoggingService', 0, NOW());
+# INSERT INTO qs_service_status (machine_name, service_name, status, update_time) VALUES ('SYPQLIKSENSE15', 'QlikSenseEngineService', 2, NOW());
+# INSERT INTO qs_service_status (machine_name, service_name, status, update_time) VALUES ('SYPQLIKSENSE15', 'QlikSensePrintingService', 0, NOW());
+# INSERT INTO qs_service_status (machine_name, service_name, status, update_time) VALUES ('SYPQLIKSENSE15', 'QlikSenseProxyService', 2, NOW());
+# INSERT INTO qs_service_status (machine_name, service_name, status, update_time) VALUES ('SYPQLIKSENSE15', 'QlikSenseRepositoryService', 2, NOW());
+# INSERT INTO qs_service_status (machine_name, service_name, status, update_time) VALUES ('SYPQLIKSENSE15', 'QlikSenseSchedulerService', 0, NOW());
+# INSERT INTO qs_service_status (machine_name, service_name, status, update_time) VALUES ('SYPQLIKSENSE15', 'QlikSenseServiceDispatcher', 2, NOW());
 
 """
 

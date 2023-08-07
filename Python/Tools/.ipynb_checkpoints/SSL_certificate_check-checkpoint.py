@@ -2,7 +2,7 @@
 Author       : Kui.Chen
 Date         : 2022-10-19 16:56:14
 LastEditors  : Kui.Chen
-LastEditTime : 2023-07-12 14:13:31
+LastEditTime : 2023-05-29 17:50:27
 FilePath     : \Scripts\Python\Tools\SSL_certificate_check.py
 Description  : 
 Copyright    : Copyright (c) 2023 by Kui.Chen, All Rights Reserved.
@@ -119,7 +119,7 @@ for url in url_list:
     process = subprocess.Popen(["ping", url], stdout=subprocess.PIPE)
     output, error = process.communicate()
     # 解析命令输出，获取IP地址
-    output = output.decode('gbk')
+    output = output.decode('utf-8')
     if '[10.' in output:
         start = output.find('[') + 1
         end = output.find(']')

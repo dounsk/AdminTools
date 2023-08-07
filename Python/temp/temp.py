@@ -1,77 +1,78 @@
-import time
-import schedule
-import subprocess
-log = "Python\ScheduledTasks\ScheduledTaskExecution.Log"
-tasks = {
-    "task1": {
-        "enabled": True,
-        "interval": "10 minutes",
-        "script": "script1.py"
-    },
-    "task2": {
-        "enabled": True,
-        "interval": "hourly at 10 minutes past the hour",
-        "script": "script2.py"
-    },
-    "task3": {
-        "enabled": True,
-        "interval": "daily at 01:00",
-        "script": "script3.py"
-    },
-    "task4": {
-        "enabled": True,
-        "interval": "every Wednesday at 10:30",
-        "script": "script4.py"
-    },
-    "task5": {
-        "enabled": True,
-        "interval": "every month on the 15th at 15:00",
-        "script": "script5.py"
-    }
-}
+'''
+Author       : Kui.Chen
+Date         : 2023-03-13 11:46:20
+LastEditors  : Kui.Chen
+LastEditTime : 2023-06-05 11:21:49
+FilePath     : \Scripts\Python\win_rm\qliksense\rerun_qs_services.py
+Description  : 多线程批量重启 Qlik Sense 服务
+Copyright    : Copyright (c) 2023 by Kui.Chen, All Rights Reserved.
+'''
 
-def job(task):
-    script_name = tasks[task]["script"]
-    print(f"[{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}] Job {task} started, running script {script_name}.")
-    with open(log, "a") as f:
-        f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}] Job {task} started, running script {script_name}.\n")
-    try:
-        subprocess.run(["python", script_name], check=True)
-    except subprocess.CalledProcessError as e:
-        error_msg = str(e)
-        print(f"[{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}] Job {task} failed with error: {error_msg}")
-        with open(log, "a") as f:
-            f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}] Job {task} failed with error: {error_msg}\n")
+import winrm
+import datetime
+import threading
 
-def check_tasks():
-    for task in tasks:
-        if tasks[task]["enabled"]:
-            if "minutes" in tasks[task]["interval"]:
-                interval = int(tasks[task]["interval"].split()[0])
-                schedule.every(interval).minutes.do(job, task)
-            elif "hourly" in tasks[task]["interval"]:
-                schedule.every().hour.at(":10").do(job, task)
-            elif "daily" in tasks[task]["interval"]:
-                time_str = tasks[task]["interval"].split()[2]
-                schedule.every().day.at(time_str).do(job, task)
-            elif "Wednesday" in tasks[task]["interval"]:
-                time_str = tasks[task]["interval"].split()[3]
-                schedule.every().wednesday.at(time_str).do(job, task)
-            elif "month" in tasks[task]["interval"]:
-                time_str = tasks[task]["interval"].split()[3]
-                schedule.every().month.at(time_str).do(job, task)
+import logging
+import winrm
+# 设置日志记录的配置
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+def remote_server(remote_host, command):
+    remote_username = 'tableau'
+    remote_password = 'wixj-2342'
+    session = winrm.Session('http://'+remote_host+':5985/wsman',
+                            auth=(remote_username, remote_password),
+                            transport='ntlm',
+                            server_cert_validation='ignore')
+    # 执行命令并打印执行过程
+    logging.info(f"Executing command: {command}")
+    result = session.run_ps(command)
+    logging.info("Command execution completed.")
+    # 打印命令执行结果
+    logging.info("Command output:")
+    logging.info(result.std_out.decode("utf-8"))
 
-            # schedule.every().seconds # 每秒运行一次
-            # schedule.every(2).seconds # 每2秒运行一次
-            # schedule.every(1).to(5).seconds # 每1-5秒运行一次
-            # schedule.every().minutes # 每分钟运行一次
-            # schedule.every().hour # 每小时运行一次
-            # schedule.every().day # 每天运行一次如果后面没有at表示每天当前时间执行一次
-            # schedule.every().day.at("00:00"). # 每天凌晨运行一次
-            # schedule.every().week # 每周凌晨运行一次
-            # schedule.every().wednesday.at("00:00") # 每周三凌晨运行一次
-            
-check_tasks()
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+nodes = [
+## IP Address 		    HostName	        Role
+# "10.122.36.100",	#	"SYPQLIKSENSE15"	[PRD] Proxy Engine 04"
+# "10.122.36.106",	#	"SYPQLIKSENSE18"	[PRD] Proxy Engine 05"
+# "10.122.36.107",	#	"SYPQLIKSENSE11"	[PRD] Proxy Engine 01"
+# "10.122.36.108",	#	"SYPQLIKSENSE12"	[PRD] Proxy Engine 02"
+# "10.122.36.109",	#	"SYPQLIKSENSE13"	[PRD] Proxy Engine 03"
+# "10.122.36.110",	#	"SYPQLIKSENSE14"	[PRD] API 02"
+# "10.122.36.119",	#	"SYPQLIKSENSE03"	[PRD] API 01"
+# "10.122.36.120",	#	"SYPQLIKSENSE04"	[PRD] Central Master & Scheduler Master"
+# "10.122.36.121",	#	"SYPQLIKSENSE05"	[PRD] Scheduler 05"
+# "10.122.36.122",	#	"SYPQLIKSENSE06"	[PRD] Central Candidate & Scheduler 01"
+# "10.122.36.123",	#	"SYPQLIKSENSE07"	[PRD] Scheduler 02"
+# "10.122.36.124",	#	"SYPQLIKSENSE08"	[PRD] Scheduler 03"
+# "10.122.36.220",	#	"SYPQLIKSENSE17"	[PRD] Scheduler 04"
+# "10.122.36.130",	#	"SYPQLIKSENSE19"	[PRD] SenseNP"
+# "10.122.36.111",	#	"PEKWPQLIK05"	    [DEV] Central Master & Scheduler Master"
+# "10.122.36.112",	#	"PEKWPQLIK06"	    [DEV] Central Candidate & Scheduler 01"
+# "10.122.36.114",	#	"PEKWPQLIK01"	    [DEV] Proxy Engine 01"
+# "10.122.36.115",	#	"PEKWPQLIK03"	    [DEV] Proxy Engine 02"
+# "10.122.36.116",	#	"PEKWPQLIK04"	    [DEV] Proxy Engine 03"
+# "10.122.36.128", 	#	"SYPQLIKSENSE09"	[DEV] Scheduler 02"
+# "10.122.27.37",   #   PEKWNQLIK07         [TST]
+# "10.122.27.38",   #   PEKWNQLIK08         [TST]
+"10.122.27.39",   #   PEKWNQLIK09         [TST]
+"10.122.27.1",    #   WIN-G7IG3TRA8E4     [TST]
+"10.122.27.3",    #   WIN-ICR6696ONF4     [TST]
+"10.122.27.4",    #   SHEWNQLIKRE         [TST]
+# "10.122.27.5",    #   WIN-54U2N8LPHD0     [TST]
+# "10.122.27.223",   #   "SHEWNQUSC2"        [TST]
+]
+
+ps1  = """
+$env:COMPUTERNAME
+"""
+
+if __name__ == '__main__':
+    threads = []
+    for node in nodes:
+        t = threading.Thread(target=remote_server, args=(node, ps1))
+        threads.append(t)
+        print("\033[32m {}\033[00m".format(f"{datetime.datetime.now().strftime('[%Y-%m-%d %H:%M:%S]')} The service restart command is issued to {node}" ))
+        t.start()
+    for t in threads:
+        t.join()

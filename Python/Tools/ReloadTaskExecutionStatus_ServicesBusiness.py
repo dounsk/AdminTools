@@ -12,7 +12,7 @@ import psycopg2
 from datetime import datetime
 
 # 连接到PG SQL数据库
-conn = psycopg2.connect(host='10.122.36.111', port=4432, dbname='QSR', user='postgres', password='abcd-1234')
+conn = psycopg2.connect(host='10.122.36.117', port=4432, dbname='QSR', user='postgres', password='abcd-1234')
 # 创建游标
 cur = conn.cursor()
 # 定义SQL查询语句
@@ -20,6 +20,7 @@ sql_query = """
 SELECT 
     B."Name" as "AppName",
     A."AppID", 
+    A."TaskID",
     CASE A."Status"
         WHEN 0 THEN 'NeverStarted'
         WHEN 1 THEN 'Triggered'
@@ -60,7 +61,7 @@ results = cur.fetchall()
 # 生成带时间戳的文件名
 timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
 # 导出结果到CSV文件
-csv_file = r"\\pekwpqlik06\Sharing_Data\service_upsell\Services Business Apps Data Reload Task Execution Status_{}.csv".format(timestamp)
+csv_file = r"\\pekwpqlik06\Sharing_Data\service_upsell\ServicesBusinessAppsDataReloadTaskExecutionStatus_{}.csv".format(timestamp)
 
 with open(csv_file, "w", newline="") as file:
     writer = csv.writer(file)

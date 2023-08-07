@@ -59,7 +59,7 @@ class SendMail(object):
                               message.as_string())
             print('The notification email was sent successfully!')
         except smtplib.SMTPException as e:
-            print('Notification email failed to be sent，Error：{}'.format(e))
+            print('Notification email failed to be sent, Error:{}'.format(e))
 
     def run(self):
         user_message = self.get_content()

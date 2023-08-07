@@ -2,8 +2,8 @@
 Author       : Kui.Chen
 Date         : 2023-03-03 14:56:17
 LastEditors  : Kui.Chen
-LastEditTime : 2023-03-16 17:48:19
-FilePath     : \Scripts\Python\SMTP\miniSMTPo365.py
+LastEditTime : 2023-06-06 10:58:45
+FilePath     : \Scripts\Python\SMTP\miniSMTP.py
 Description  : 最小化 SMTP 邮件发送任务
 Copyright    : Copyright (c) 2023 by Kui.Chen, All Rights Reserved.
 '''

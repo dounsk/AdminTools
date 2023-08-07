@@ -6,7 +6,7 @@ api_cfg = {
     'URLS': 'wss://10.122.36.110:4747/app/',
     'm_XrfKey': '0123456789abcdef',
     'SERVER': {
-        'header': {'X-Qlik-User': 'UserDirectory=lenovoad; UserId=kuichen1'},
+        'header': {'X-Qlik-User': 'UserDirectory=INTERNAL; UserId=sa_scheduler'},
         'sslopt':
             {
                 'ca_certs': '/home/kuii/scripts/Python/Data/sypqliksense14/root.pem',
@@ -40,7 +40,6 @@ def engine_api_getinfo(app_id):
         "method": "GetAppProperties",
         "handle": 1,
         "params": []
-
     }
     try:
         ws.send(json.dumps(req2))

@@ -2,7 +2,7 @@
 Author       : Kui.Chen
 Date         : 2023-01-13 16:31:35
 LastEditors  : Kui.Chen
-LastEditTime : 2023-05-25 10:49:08
+LastEditTime : 2023-05-31 13:41:21
 FilePath     : \Scripts\Python\ScheduledTasks\Task_triggers.pyw
 Description  : Schedule task triggers
 Copyright    : Copyright (c) 2023 by Kui.Chen, All Rights Reserved.
@@ -12,7 +12,7 @@ import schedule
 import subprocess
 
 # 运行日志输出路径
-log = "D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\ScheduledTaskExecution.Log"
+log = r"C:\Users\douns\OneDrive - 8088\Scripts\Python\ScheduledTasks\ScheduledTaskExecution.Log"
 
 tasks = {
     "minutes_tst": {
@@ -20,7 +20,7 @@ tasks = {
         "enabled": False,
         "interval": "5 minutes",
         # "script": r"D:\OneDrive - 8088\Scripts\Python\SMTP\miniSMTP.py"
-        "script": r"D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\keepalive.pyw"
+        "script": r"C:\Users\douns\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\keepalive.pyw"
     },
     "hourly": {
     # 每小时能干啥？还没有想好，不启用先 😁
@@ -31,20 +31,20 @@ tasks = {
     "daily_zhihu": {
     # qliksense task scheduler load performance
         "enabled": True,
-        "interval": "daily at 10:58",
-        "script": r"D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\daily_zhihu.pyw"
+        "interval": "daily at 13:35",
+        "script": r"C:\Users\douns\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\daily_zhihu.pyw"
     },
     "weekly_Wed_keepalive": {
     # admin keep alive
         "enabled": False,
         "interval": "every Wednesday at 17:00",
-        "script": r"D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\keepalive.pyw"
+        "script": r"C:\Users\douns\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\keepalive.pyw"
     },
     "weekly_Fri_dms": {
     # dead man's switch
         "enabled": False,
         "interval": "every Friday at 17:00",
-        "script": r"D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\dms.py"
+        "script": r"C:\Users\douns\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\dms.py"
     }
 }
 
@@ -54,7 +54,7 @@ def job(task):
     with open(log, "a") as f:
         f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}] Job {task} started, running script {script_name}.\n")
     try:
-        subprocess.run(["C:\Python\python.exe", script_name], check=True)
+        subprocess.run(["C:/Users/douns/AppData/Local/Programs/Python/Python311/python.exe", script_name], check=True)
     except subprocess.CalledProcessError as e:
         error_msg = str(e)
         print(f"[{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}] Job {task} failed with error: {error_msg}")

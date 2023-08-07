@@ -114,3 +114,5 @@
 [2023-05-24 11:02:25] Job daily_zhihu failed with error: Command '['C:\\Python\\python.exe', 'Python\\ScheduledTasks\tasks\\daily_zhihu.pyw']' returned non-zero exit status 2.
 [2023-05-25 11:00:10] Job daily_zhihu started, running script D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\daily_zhihu.pyw.
 [2023-05-26 10:58:11] Job daily_zhihu started, running script D:\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\daily_zhihu.pyw.
+[2023-05-31 12:04:32] Job daily_zhihu started, running script C:\Users\douns\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\daily_zhihu.pyw.
+[2023-05-31 13:37:18] Job daily_zhihu started, running script C:\Users\douns\OneDrive - 8088\Scripts\Python\ScheduledTasks\tasks\daily_zhihu.pyw.
