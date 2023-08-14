@@ -19,8 +19,22 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "bb71e8f8ee4a07e0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Project/LogDB/PBI Server.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -105,7 +119,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Documentation/Knowledge/运维工具.md"
+                "file": "Project/LogDB/PBI Server.md"
               }
             }
           },
@@ -115,7 +129,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Documentation/Knowledge/运维工具.md",
+                "file": "Project/LogDB/PBI Server.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -169,21 +183,23 @@
       "random-note:Open random note": false
     }
   },
-  "active": "a4e9abfe9bbe099c",
+  "active": "bb71e8f8ee4a07e0",
   "lastOpenFiles": [
-    "Documentation/Knowledge/运维自动化.md",
-    "Documentation/Knowledge/运维工具.md",
     "Project/PowerBI/TCV-Tracker-IaaS/magellan-edw-synapse.md",
+    "Project/LogDB/PBI Server.md",
+    "Project/LogDB",
     "Project/PowerBI/TCV-Tracker-IaaS/Fields that are not available now.md",
+    "Documentation/Knowledge/运维工具.md",
     "Project/PowerBI/TCV-Tracker-IaaS/Data Modeling​.md",
+    "Project/PowerBI/TCV-Tracker-IaaS/TCV MCV for Power Compute TruScale IaaS.md",
+    "Project/PowerBI/TCV-Tracker-IaaS/Rules.md",
+    "Project/PowerBI/TCV-Tracker-IaaS/IT Architecture​.md",
+    "Documentation/Knowledge/运维自动化.md",
     "Project/Lenovo/DataBase Password.md",
     "Project/Lenovo/服务器上的硬盘类型、RAID和RAID控制器.md",
     "Project/Qlik_Sense/Vizlib Version.md",
     "Project/Qlik_Sense/Section Access.md",
-    "Project/PowerBI/TCV-Tracker-IaaS/Rules.md",
-    "Project/PowerBI/TCV-Tracker-IaaS/TCV MCV for Power Compute TruScale IaaS.md",
     "Project/Qlik_Sense/Client Authentication URL.md",
-    "Project/PowerBI/TCV-Tracker-IaaS/IT Architecture​.md",
     "Documentation/Linux/Debian.md",
     "Project/Qlik_Sense/使用qliksense 进行数据报表开发.md",
     "Documentation/Linux/Ubuntu.md",
@@ -199,7 +215,6 @@
     "Daily/2023-03-16_星期四.md",
     "Daily/2023-03-09 周四.md",
     "Attached/Pasted image 20230210114943.png",
-    "Documentation/Python/csv.md",
     "CANVAS/未命名.canvas",
     "CANVAS/白板 🎨.canvas",
     "Attached/Pasted image 20230518151158.png",
@@ -218,7 +233,6 @@
     "Documentation/Knowledge",
     "Attached/Pasted image 20230316110237.png",
     "Documentation/HTML",
-    "Documentation/SQL",
     "未命名.canvas"
   ]
 }

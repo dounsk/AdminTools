@@ -76,33 +76,42 @@ $IP = (((ipconfig|select-string "IPv4"|out-string).Split(":")[1]) -split '\r?\n'
 # 获取启用的Qlik服务状态
 $services = Get-Service | Where-Object {$_.Name -like "Qlik*"} | Where-Object {$_.StartType -ne "Disabled"}
 # 设置邮件正文
-$emailBody = "<table align='Center' width='800' border='0'>"
-$emailBody += "<tr><td>"
-$emailBody += "<p align='Center'><b>  $Time</b></p>"
-$emailBody += "<p align='left'> Node $env:COMPUTERNAME triggered service restart, please pay attention to resource usage and service running status, thank you.</p>"
-$emailBody += "<ul>"
-$emailBody += "<li>IP Address:<b>  $IP</b></li>"
-$emailBody += "<li>Node Role:<b> $($NodeTable[$env:COMPUTERNAME]) </b></li>"
-$emailBody += "<li>CPU Usage:<b> $($cpuUsage.Average)%</b></li>"
-$emailBody += "<li>Memory Usage:<b> $memoryUsage </b></li>"
-$emailBody += "</ul>"
-$emailBody += "<br>"
-$emailBody += "<table align='Center' width='400' border='1'>"
-$emailBody += "<caption>Qlik Sense Service [Enabled]</caption>"
-$emailBody += "<tr> <th align='left'>Service Name</th> <th align='left'>Status</th> </tr>"
+$emailBody = @"
+<table align='Center' width='800' border='0'>
+<tr><td>
+<p align='Center'><b>$Time</b></p>
+<p align='left'>Node $env:COMPUTERNAME triggered service restart, please pay attention to resource usage and service running status, thank you.</p>
+<ul>
+<li>IP Address:<b>$IP</b></li>
+<li>Node Role:<b>$($NodeTable[$env:COMPUTERNAME])</b></li>
+<li>CPU Usage:<b>$($cpuUsage.Average)%</b></li>
+<li>Memory Usage:<b>$memoryUsage</b></li>
+</ul>
+<br>
+<table align='Center' width='400' border='1'>
+<caption>Qlik Sense Service [Enabled]</caption>
+<tr>
+<th align='left'>Service Name</th>
+<th align='left'>Status</th>
+</tr>
+"@
 foreach ($service in $services) {
-    $emailBody += "<tr>"
-    $emailBody += "<td align='left'>$($service.Name) </td>"
-    $emailBody +="<td><b>$($service.Status)</b></td>"
-    $emailBody += "</tr>"
+    $emailBody += @"
+<tr>
+<td align='left'>$($service.Name)</td>
+<td><b>$($service.Status)</b></td>
+</tr>
+"@
 }
-$emailBody += "</table>"
-$emailBody += "<br>"
-$emailBody += "<i>This email is automatically sent by admintools and admin of the Qlik platform will be notified of changes in the status of the service. 
-Please don't reply, thanks.</i><br>"
-$emailBody += "</td></tr>"
-$emailBody += "<br>"
-$emailBody += "</table>"
+$emailBody += @"
+</table>
+<br>
+<i>This email is automatically sent by admintools and admin of the Qlik platform will be notified of changes in the status of the service. 
+Please don't reply, thanks.</i><br>
+</td></tr>
+<br>
+</table>
+"@
 
 # 远程通知告警服务器本机故障
 $credential = New-Object System.Management.Automation.PSCredential("lenovo\tableau", (ConvertTo-SecureString "wixj-2342" -AsPlainText -Force))

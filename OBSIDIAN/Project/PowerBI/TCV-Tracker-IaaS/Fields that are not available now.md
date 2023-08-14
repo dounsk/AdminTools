@@ -1,3 +1,4 @@
+https://lenovobeijing.sharepoint.com/:x:/r/sites/TCVTrackingTool/_layouts/15/doc2.aspx?sourcedoc=%7B7c5d63f7-5a09-4e53-ac15-0a2ebe31218b%7D&action=edit&wdlor=cB4973F40-C46E-4410-9474-803D0326EB46&wdenableroaming=1&wdorigin=BrowserReload.Sharing.ServerTransfer&wdredirectionreason=Force_SingleStepBoot&wdinitialsession=5c4f4cf9-7cb1-47ce-a0b3-63cf75a29751&wdrldsc=4&wdrldc=1&wdrldr=ContinueInExcel&cid=b4c4ae6d-9874-48fc-965a-1c580eab09e8&clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiIyNy8yMzA2MDQwMTE3NyIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D
 
 1. RTM = Route to Market 
 Field value: [Direct / Indirect] 
