@@ -1,2 +1,0 @@
-##Task Status Checking
-cd / & "C:\Program Files\PostgreSQL\9.6\bin\psql.exe" --command "SELECT current_timestamp AS \"Time\", COUNT(\"Status\") AS \"Queued_Number\", \"ExecutingNodeName\" FROM \"ExecutionResults\" WHERE \"Status\" = '3' GROUP BY \"ExecutingNodeName\";" "host=localhost hostaddr=127.0.0.1 port=4432 user=postgres password=abcd-1234 dbname=QSR" > "C:\qs_prd_task_status\QS_PRD_Task_Status_%date:~-4,4%%date:~-10,2%%date:~-7,2%%time:~0,2%%time:~3,2%%time:~6,2%.csv"
