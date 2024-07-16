@@ -10,7 +10,7 @@ Description  :
 Copyright    : Copyright (c) 2024 ChenKui, All Rights Reserved.
 """
 from fastapi import FastAPI
-from admin_tools.api_items import router as items_router
+from admin_tools.api.items import router as items_router
 
 app = FastAPI()
 

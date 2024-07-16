@@ -10,6 +10,7 @@ Description  :
 Copyright    : Copyright (c) 2024 ChenKui, All Rights Reserved.
 """
 from fastapi import APIRouter
+from admin_tools.system.p404_active_script import *
 
 router = APIRouter()
 
