@@ -27,3 +27,12 @@ def create_item(body: ActiveCheck = Body(...)):
         return True
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
+
+
+@router.post("/hello", tags=['TeamPortal'], description="计划任务脚本状态自动汇总")
+def hello(body: ActiveCheck = Body(...)):
+    try:
+        exe_active_script_check(body.script_name, body.triggered, body.status, body.remarks)
+        return True
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))
